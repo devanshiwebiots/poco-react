@@ -179,467 +179,467 @@ import LeafletMap from "../component/appnew/map/LeafletMap";
 export const routes = [
   {
     path: `${process.env.PUBLIC_URL}/dashboard/default`,
-    Component: <Default />,
+    element: <Default />,
   },
-  { path: `${process.env.PUBLIC_URL}/dashboard/crypto`, Component: <Crypto /> },
+  { path: `${process.env.PUBLIC_URL}/dashboard/crypto`, element: <Crypto /> },
   {
     path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`,
-    Component: <Ecommerce />,
+    element: <Ecommerce />,
   },
   {
     path: `${process.env.PUBLIC_URL}/dashboard/generalwidget`,
-    Component: <Generalwidgets />,
+    element: <Generalwidgets />,
   },
   {
     path: `${process.env.PUBLIC_URL}/dashboard/chartwidget`,
-    Component: <Chartswidgets />,
+    element: <Chartswidgets />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/ui-element/typography`,
-    Component: <Typography />,
+    element: <Typography />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/button`,
-    Component: <Button />,
+    element: <Button />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/avatar`,
-    Component: <Avatars />,
+    element: <Avatars />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/helperclass`,
-    Component: <Helperclasses />,
+    element: <Helperclasses />,
   },
-  { path: `${process.env.PUBLIC_URL}/ui-element/grid`, Component: <Grid /> },
+  { path: `${process.env.PUBLIC_URL}/ui-element/grid`, element: <Grid /> },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/tagsandpills`,
-    Component: <Tagandpills />,
+    element: <Tagandpills />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/progress-bars`,
-    Component: <Progressbars />,
+    element: <Progressbars />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/modalComponent`,
-    Component: <Modal />,
+    element: <Modal />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/alertComponent`,
-    Component: <Alert />,
+    element: <Alert />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/popoverComponent`,
-    Component: <Popover />,
+    element: <Popover />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/tooltipsComponent`,
-    Component: <Tooltip />,
+    element: <Tooltip />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/spinner`,
-    Component: <Spinner />,
+    element: <Spinner />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/dropdownComponent`,
-    Component: <Dropdown />,
+    element: <Dropdown />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/tab-bootstrap`,
-    Component: <Tabbootstrap />,
+    element: <Tabbootstrap />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/tab-line`,
-    Component: <Tabline />,
+    element: <Tabline />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/navsComponent`,
-    Component: <Navs />,
+    element: <Navs />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/accordionComponent`,
-    Component: <AccordionsComponent />,
+    element: <AccordionsComponent />,
   },
 
-  { path: `${process.env.PUBLIC_URL}/ui-element/list`, Component: <Lists /> },
+  { path: `${process.env.PUBLIC_URL}/ui-element/list`, element: <Lists /> },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/scrollable`,
-    Component: <Scrollable />,
+    element: <Scrollable />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/bootstrap-notify`,
-    Component: <Boostrapnotify />,
+    element: <Boostrapnotify />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/rating`,
-    Component: <Ratings />,
+    element: <Ratings />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/draganddrop`,
-    Component: <Draganddrop />,
+    element: <Draganddrop />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/dropzone`,
-    Component: <Dropzone />,
+    element: <Dropzone />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/ui-element/tourComponent`,
-    Component: <Tour />,
+    element: <Tour />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/sweetAlert`,
-    Component: <Sweetalert2 />,
+    element: <Sweetalert2 />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/carousel`,
-    Component: <Carousel />,
+    element: <Carousel />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/ui-element/ribbon`,
-    Component: <Ribbons />,
+    element: <Ribbons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/pagination`,
-    Component: <Pagination />,
+    element: <Pagination />,
   },
-  { path: `${process.env.PUBLIC_URL}/ui-element/steps`, Component: <Steps /> },
+  { path: `${process.env.PUBLIC_URL}/ui-element/steps`, element: <Steps /> },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/breadcrumb`,
-    Component: <Breadcrumb />,
+    element: <Breadcrumb />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/rangeSlider`,
-    Component: <Rangeslider />,
+    element: <Rangeslider />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/imageCropper`,
-    Component: <Imagecropper />,
+    element: <Imagecropper />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/stickyNotes`,
-    Component: <Stickynotes />,
+    element: <Stickynotes />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/image-upload`,
-    Component: <UploadImage />,
+    element: <UploadImage />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/ui-element/flagIcons`,
-    Component: <Flagicons />,
+    element: <Flagicons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/fontAwsomeIcon`,
-    Component: <Fontawesomeicons />,
+    element: <Fontawesomeicons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/icoIcons`,
-    Component: <Iconicons />,
+    element: <Iconicons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/featherIcons`,
-    Component: <Feathericons />,
+    element: <Feathericons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/themifyIcons`,
-    Component: <Themifyicons />,
+    element: <Themifyicons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/weatherIcons`,
-    Component: <Weathericons />,
+    element: <Weathericons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/simplelineIcon`,
-    Component: <Simplelineicon />,
+    element: <Simplelineicon />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/materialIcon`,
-    Component: <Materialdesignicon />,
+    element: <Materialdesignicon />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/typicon`,
-    Component: <Typicon />,
+    element: <Typicon />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/pe7Icon`,
-    Component: <Pe7icons />,
+    element: <Pe7icons />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/ionic-icon`,
-    Component: <Ionicicon />,
+    element: <Ionicicon />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/charts/apexcharts`,
-    Component: <Apexcharts />,
+    element: <Apexcharts />,
   },
   {
     path: `${process.env.PUBLIC_URL}/charts/googlecharts`,
-    Component: <Googlecharts />,
+    element: <Googlecharts />,
   },
   {
     path: `${process.env.PUBLIC_URL}/charts/chartjscharts`,
-    Component: <Chartjs />,
+    element: <Chartjs />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form/form-validation`,
-    Component: <Formvalidation />,
+    element: <Formvalidation />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form/base-input`,
-    Component: <BaseInput />,
+    element: <BaseInput />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form/radio-checkbox-control`,
-    Component: <Checkboxandradio />,
+    element: <Checkboxandradio />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form/input-group`,
-    Component: <InputGroup />,
+    element: <InputGroup />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form/megaoptions`,
-    Component: <MegaOption />,
+    element: <MegaOption />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/form/default-form`,
-    Component: <Formdefault />,
+    element: <Formdefault />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form/form-wizard-one`,
-    Component: <Formwizard1 />,
+    element: <Formwizard1 />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/form-widget/datepicker`,
-    Component: <Datepicker />,
+    element: <Datepicker />,
   },
   {
     path: `${process.env.PUBLIC_URL}/form-widget/typeahead`,
-    Component: <Typeahead />,
+    element: <Typeahead />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/tables/bootstrap-basic-table`,
-    Component: <Basictable />,
+    element: <Basictable />,
   },
   {
     path: `${process.env.PUBLIC_URL}/tables/bootstrap-sizing-table`,
-    Component: <Sizingtable />,
+    element: <Sizingtable />,
   },
   {
     path: `${process.env.PUBLIC_URL}/tables/bootstrap-border-table`,
-    Component: <Bordertable />,
+    element: <Bordertable />,
   },
   {
     path: `${process.env.PUBLIC_URL}/tables/bootstrap-styling-table`,
-    Component: <Stylingtable />,
+    element: <Stylingtable />,
   },
   {
     path: `${process.env.PUBLIC_URL}/tables/data-tables`,
-    Component: <DataTableComponent />,
+    element: <DataTableComponent />,
   },
 
-  { path: `${process.env.PUBLIC_URL}/cards/basic`, Component: <BasicCards /> },
-  { path: `${process.env.PUBLIC_URL}/cards/theme`, Component: <ThemeCards /> },
-  { path: `${process.env.PUBLIC_URL}/cards/tabbed`, Component: <TabCard /> },
+  { path: `${process.env.PUBLIC_URL}/cards/basic`, element: <BasicCards /> },
+  { path: `${process.env.PUBLIC_URL}/cards/theme`, element: <ThemeCards /> },
+  { path: `${process.env.PUBLIC_URL}/cards/tabbed`, element: <TabCard /> },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/product`,
-    Component: <Product />,
+    element: <Product />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/product-page`,
-    Component: <Productpage />,
+    element: <Productpage />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/product-list`,
-    Component: <Productlist />,
+    element: <Productlist />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/product-details`,
-    Component: <Productdetails />,
+    element: <Productdetails />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/orederhistory`,
-    Component: <Orderhistory />,
+    element: <Orderhistory />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/invoice`,
-    Component: <Invoice />,
+    element: <Invoice />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/pricing`,
-    Component: <Pricing />,
+    element: <Pricing />,
   },
-  { path: `${process.env.PUBLIC_URL}/ecommerce-app/cart`, Component: <Cart /> },
+  { path: `${process.env.PUBLIC_URL}/ecommerce-app/cart`, element: <Cart /> },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/wishlist`,
-    Component: <Wishlist />,
+    element: <Wishlist />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ecommerce-app/checkout`,
-    Component: <Checkout />,
+    element: <Checkout />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/blog/blog-single`,
-    Component: <Blogsingle />,
+    element: <Blogsingle />,
   },
   {
     path: `${process.env.PUBLIC_URL}/blog/blog-details`,
-    Component: <Blogdetail />,
+    element: <Blogdetail />,
   },
-  { path: `${process.env.PUBLIC_URL}/blog/addpost`, Component: <Blogpost /> },
+  { path: `${process.env.PUBLIC_URL}/blog/addpost`, element: <Blogpost /> },
 
   {
     path: `${process.env.PUBLIC_URL}/timeline/timeline-one`,
-    Component: <Timeline1 />,
+    element: <Timeline1 />,
   },
   {
     path: `${process.env.PUBLIC_URL}/timeline/timeline-two`,
-    Component: <Timeline2 />,
+    element: <Timeline2 />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/learning/learning-list`,
-    Component: <Learninglist />,
+    element: <Learninglist />,
   },
   {
     path: `${process.env.PUBLIC_URL}/learning/detailed-course`,
-    Component: <Learningdeatil />,
+    element: <Learningdeatil />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/gallery/gallery-grid`,
-    Component: <ImageGallery />,
+    element: <ImageGallery />,
   },
   {
     path: `${process.env.PUBLIC_URL}/gallery/gallerygrid-desc`,
-    Component: <ImageWithDesc />,
+    element: <ImageWithDesc />,
   },
   {
     path: `${process.env.PUBLIC_URL}/gallery/gallery-masonry`,
-    Component: <MesonryGallery />,
+    element: <MesonryGallery />,
   },
   {
     path: `${process.env.PUBLIC_URL}/gallery/gallerymasonry-desc`,
-    Component: <MesonryDesc />,
+    element: <MesonryDesc />,
   },
   {
     path: `${process.env.PUBLIC_URL}/gallery/hover-effect`,
-    Component: <ImageHover />,
+    element: <ImageHover />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/job-search/cardview`,
-    Component: <Cardview />,
+    element: <Cardview />,
   },
   {
     path: `${process.env.PUBLIC_URL}/job-search/listview`,
-    Component: <Joblist />,
+    element: <Joblist />,
   },
   {
     path: `${process.env.PUBLIC_URL}/job-search/job-details`,
-    Component: <Jobdetail />,
+    element: <Jobdetail />,
   },
   {
     path: `${process.env.PUBLIC_URL}/job-search/apply`,
-    Component: <Jobapply />,
+    element: <Jobapply />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/users/user-profile`,
-    Component: <Userprofile />,
+    element: <Userprofile />,
   },
   {
     path: `${process.env.PUBLIC_URL}/users/user-edit`,
-    Component: <Useredit />,
+    element: <Useredit />,
   },
   {
     path: `${process.env.PUBLIC_URL}/users/user-cards`,
-    Component: <Usercards />,
+    element: <Usercards />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/appnew/social-app`,
-    Component: <SocialApp />,
+    element: <SocialApp />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/editors/ck-editor`,
-    Component: <CkEditor />,
+    element: <CkEditor />,
   },
   {
     path: `${process.env.PUBLIC_URL}/editors/mde-editor`,
-    Component: <MdeEditor />,
+    element: <MdeEditor />,
   },
   {
     path: `${process.env.PUBLIC_URL}/editors/ace-code-editor`,
-    Component: <AceCodeEditor />,
+    element: <AceCodeEditor />,
   },
 
-  { path: `${process.env.PUBLIC_URL}/others/faq`, Component: <FaqComponent /> },
+  { path: `${process.env.PUBLIC_URL}/others/faq`, element: <FaqComponent /> },
   {
     path: `${process.env.PUBLIC_URL}/others/knowledgebase`,
-    Component: <KnowledgebaseComponent />,
+    element: <KnowledgebaseComponent />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/appnew/email-app`,
-    Component: <EmailApp />,
+    element: <EmailApp />,
   },
 
-  { path: `${process.env.PUBLIC_URL}/appnew/chat-app`, Component: <ChatApp /> },
+  { path: `${process.env.PUBLIC_URL}/appnew/chat-app`, element: <ChatApp /> },
 
   {
     path: `${process.env.PUBLIC_URL}/appnew/contact-app`,
-    Component: <Contactlist />,
+    element: <Contactlist />,
   },
   {
     path: `${process.env.PUBLIC_URL}/appnew/new-contact`,
-    Component: <Newuser />,
+    element: <Newuser />,
   },
   {
     path: `${process.env.PUBLIC_URL}/appnew/edit-contact/:id`,
-    Component: <Edituser />,
+    element: <Edituser />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/calender/basic`,
-    Component: <BasicCalendar />,
+    element: <BasicCalendar />,
   },
   {
     path: `${process.env.PUBLIC_URL}/calender/advance`,
-    Component: <DraggableCalendar />,
+    element: <DraggableCalendar />,
   },
 
   {
     path: `${process.env.PUBLIC_URL}/map/google-map`,
-    Component: <GoogleMap />,
+    element: <GoogleMap />,
   },
   {
     path: `${process.env.PUBLIC_URL}/map/leaflet-map`,
-    Component: <LeafletMap />,
+    element: <LeafletMap />,
   },
   {
     path: `${process.env.PUBLIC_URL}/map/pigeon-maps`,
-    Component: <MapJsContain />,
+    element: <MapJsContain />,
   },
 
-  { path: `${process.env.PUBLIC_URL}/appnew/todo-app`, Component: <Todo /> },
+  { path: `${process.env.PUBLIC_URL}/appnew/todo-app`, element: <Todo /> },
   {
     path: `${process.env.PUBLIC_URL}/pages/sample-page`,
-    Component: <Samplepage />,
+    element: <Samplepage />,
   },
   {
     path: `${process.env.PUBLIC_URL}/pages/support-ticket`,
-    Component: <Supportticket />,
+    element: <Supportticket />,
   },
   {
     path: `${process.env.PUBLIC_URL}/pages/search`,
-    Component: <Searchwebsite />,
+    element: <Searchwebsite />,
   },
 ];

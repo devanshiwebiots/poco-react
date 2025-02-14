@@ -9,7 +9,7 @@ import {
   CardBody,
   Form,
 } from "reactstrap";
-import Dropzone from "react-dropzone-uploader";
+// import Dropzone from "react-dropzone-uploader";
 import { ToastContainer, toast } from "react-toastify";
 const Dropzones = (props) => {
   const getUploadParams = ({ meta }) => {
@@ -33,7 +33,7 @@ const Dropzones = (props) => {
               <CardBody>
                 <Form>
                   <div className="dz-message needsclick">
-                    <Dropzone
+                    {/* <Dropzone
                       getUploadParams={getUploadParams}
                       onChangeStatus={handleChangeStatus}
                       maxFiles={1}
@@ -44,7 +44,7 @@ const Dropzones = (props) => {
                         
                         dropzoneActive: { borderColor: "green" },
                       }}
-                    />
+                    /> */}
                   </div>
                 </Form>
               </CardBody>
@@ -59,12 +59,12 @@ const Dropzones = (props) => {
                 <Form>
                   <ToastContainer />
                   <div className="dz-message needsclick">
-                    <Dropzone
+                    {/* <Dropzone
                       getUploadParams={getUploadParams}
                       onChangeStatus={handleChangeStatus}
                       onSubmit={handleSubmit}
                       accept="image/*"
-                    />
+                    /> */}
                   </div>
                 </Form>
               </CardBody>
@@ -78,12 +78,12 @@ const Dropzones = (props) => {
               <CardBody>
                 <Form>
                   <div className="dz-message needsclick">
-                    <Dropzone
+                    {/* <Dropzone
                       getUploadParams={getUploadParams}
                       onChangeStatus={handleChangeStatus}
                       onSubmit={handleSubmit}
                       accept="image/*,audio/*,video/*"
-                    />
+                    /> */}
                   </div>
                 </Form>
               </CardBody>
@@ -97,7 +97,7 @@ const Dropzones = (props) => {
               <CardBody>
                 <Form>
                   <div className="dz-message needsclick">
-                    <Dropzone
+                    {/* <Dropzone
                       onChangeStatus={handleChangeStatus}
                       onSubmit={handleSubmit}
                       maxFiles={3}
@@ -106,7 +106,7 @@ const Dropzones = (props) => {
                         `${3 - files.length} more`
                       }
                       submitButtonDisabled={(files) => files.length < 3}
-                    />
+                    /> */}
                   </div>
                 </Form>
               </CardBody>
@@ -120,11 +120,11 @@ const Dropzones = (props) => {
               <CardBody>
                 <Form>
                   <div className="dz-message needsclick">
-                    <Dropzone
+                    {/* <Dropzone
                       getUploadParams={getUploadParams}
                       onSubmit={handleSubmit}
                       inputContent="Drop Files (Custom file Layout)"
-                    />
+                    /> */}
                   </div>
                 </Form>
               </CardBody>

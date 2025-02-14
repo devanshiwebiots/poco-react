@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Container, Row } from "reactstrap";
 import { NavLink, TabContent, TabPane, Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import { ADD_LAYOUT, ADD_COLOR, ADD_MIXlAYOUT, ADD_COSTOMIZER, ROUTER_ANIMATION, ADD_SIDEBAR_TYPES } from "../../../redux/actionType";
 import { XCircle } from "react-feather";
@@ -294,7 +294,7 @@ const ThemeCustomize = () => {
                   </Container>
                 </ModalBody>
                 <ModalFooter>
-                  <CopyToClipboard text={JSON.stringify(configDB)}>
+                  {/* <CopyToClipboard text={JSON.stringify(configDB)}>
                     <Button
                       color='primary'
                       className='notification'
@@ -307,7 +307,7 @@ const ThemeCustomize = () => {
                     >
                       Copy text
                     </Button>
-                  </CopyToClipboard>
+                  </CopyToClipboard> */}
                   <Button color='secondary' onClick={toggle}>
                     Cancel
                   </Button>

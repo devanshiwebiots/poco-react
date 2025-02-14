@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Col, Row, Card, CardBody, Media } from "reactstrap";
-import Lightbox from "react-18-image-lightbox";
+// import Lightbox from "react-18-image-lightbox";
 import { images, smallImages } from "../../../data/socialimagesData";
 
 const PhotosTab = () => {
@@ -132,7 +132,7 @@ const PhotosTab = () => {
           </Card>
         </Col>
       </Row>
-      {photoIndex.isOpen && <Lightbox mainSrc={images[photoIndex.index]} nextSrc={images[(photoIndex.index + 1) % images.length]} prevSrc={images[(photoIndex.index + images.length - 1) % images.length]} imageTitle={photoIndex.index + 1 + "/" + images.length} onCloseRequest={() => setPhotoIndex({ ...photoIndex, isOpen: false })} onMovePrevRequest={onMovePrev} onMoveNextRequest={onMoveNext} />}
+      {/* {photoIndex.isOpen && <Lightbox mainSrc={images[photoIndex.index]} nextSrc={images[(photoIndex.index + 1) % images.length]} prevSrc={images[(photoIndex.index + images.length - 1) % images.length]} imageTitle={photoIndex.index + 1 + "/" + images.length} onCloseRequest={() => setPhotoIndex({ ...photoIndex, isOpen: false })} onMovePrevRequest={onMovePrev} onMoveNextRequest={onMoveNext} />} */}
     </Fragment>
   );
 };

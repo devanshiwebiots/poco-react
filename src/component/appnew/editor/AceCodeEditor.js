@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import Breadcrumb from "../../common/breadcrumb/breadcrumb";
 import AceEditor from "react-ace";
-import "ace-builds/webpack-resolver";
-import "ace-builds/src-noconflict/theme-monokai";
+// import "ace-builds/webpack-resolver";
+// import "ace-builds/src-noconflict/theme-monokai";
 import { Container, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
 const AceCodeEditor = (props) => {
   return (

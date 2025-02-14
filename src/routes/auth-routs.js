@@ -18,49 +18,49 @@ import ComingsoonImg from "./pages/comingSoon/comingsoonImg";
 const AuthRoutes = () => {
     return (
         <Routes>
-            <Route path={`${process.env.PUBLIC_URL}/login`} component={Signin} />
+            <Route path={`${process.env.PUBLIC_URL}/login`} element={Signin} />
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/error-400`}
-                component={Error400}
+                element={Error400}
             ></Route>
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/error-404`}
-                component={Error404}
+                element={Error404}
             ></Route>
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/error-500`}
-                component={Error500}
+                element={Error500}
             ></Route>
 
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/maintenance`}
-                component={Maintenance}
+                element={Maintenance}
             ></Route>
 
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/login`}
-                component={Login}
+                element={Login}
             ></Route>
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/register`}
-                component={Register}
+                element={Register}
             ></Route>
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/forget-password`}
-                component={Forgetpwd}
+                element={Forgetpwd}
             ></Route>
 
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/comingsoon`}
-                component={Comingsoon}
+                element={Comingsoon}
             ></Route>
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/comingsoon-bg-image`}
-                component={ComingsoonImg}
+                element={ComingsoonImg}
             ></Route>
             <Route
                 path={`${process.env.PUBLIC_URL}/pages/comingsoon-bg-video`}
-                component={ComingsoonVideo}
+                element={ComingsoonVideo}
             ></Route>
         </Routes>
     )

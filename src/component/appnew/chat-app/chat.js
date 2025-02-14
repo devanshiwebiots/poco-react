@@ -9,8 +9,8 @@ import one from "../../../assets/images/user/1.jpg";
 import two from "../../../assets/images/user/2.jpg";
 import errorImg from "../../../assets/images/search-not-found.png";
 import start_conversion from "../../../assets/images/start-conversion.jpg";
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
+// import data from "@emoji-mart/data";
+// import Picker from "@emoji-mart/react";
 
 const Chat = (props) => {
   const allMembers = useSelector((content) => content.ChatApp.allMembers);
@@ -232,14 +232,14 @@ const Chat = (props) => {
                       <div className='chat-message clearfix'>
                         <Row>
                           <div className='mb-2'>
-                            {showEmojiPicker ? (
+                            {/* {showEmojiPicker ? (
                               <Picker
                                 data={data}
                                 onEmojiSelect={(e) => {
                                   addEmoji(e.native);
                                 }}
                               />
-                            ) : null}
+                            ) : null} */}
                           </div>
                           <Col xl='12' className='d-flex'>
                             <div className='smiley-box bg-primary'>

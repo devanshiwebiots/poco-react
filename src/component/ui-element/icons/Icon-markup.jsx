@@ -1,5 +1,5 @@
 import React from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+// import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
 import {Container,Row,Button,FormGroup,Label,Input} from 'reactstrap'
 import FeatherComponent from '../../common/featherComponent';
@@ -38,7 +38,7 @@ const IconMarkUp = props => {
                             <div className="d-flex">
                                 <FormGroup className='form-group'>
                                     <Input type="text" className="inp-val form-control m-r-10" defaultValue={props.itag.iTag} id="input_copy" />
-                                    <CopyToClipboard text={props.itag.iTag}
+                                    {/* <CopyToClipboard text={props.itag.iTag}
                                     >
                                         <Button
                                              color="primary" className="notification"
@@ -46,7 +46,7 @@ const IconMarkUp = props => {
                                                 position: toast.POSITION.BOTTOM_RIGHT
                                             })}
                                         >Copy text</Button>
-                                    </CopyToClipboard>
+                                    </CopyToClipboard> */}
                                 </FormGroup>
                             </div>
                         </div>

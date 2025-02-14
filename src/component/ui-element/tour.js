@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
 import Breadcrumb from "../common/breadcrumb/breadcrumb";
 import { Container, Row, Col, Card, CardHeader, Media } from "reactstrap";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import Tour from "reactour";
+// import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+// import Tour from "reactour";
 import { Link } from "react-router-dom";
 const steps = [
   {
@@ -27,12 +27,12 @@ const steps = [
   },
 ];
 const Tours = (props) => {
-  const [opentour, setopentour] = useState(true);
-  const closeTour = () => {
-    setopentour(false);
-  };
-  const disableBody = (target) => disableBodyScroll(target);
-  const enableBody = (target) => enableBodyScroll(target);
+  // const [opentour, setopentour] = useState(true);
+  // const closeTour = () => {
+  //   setopentour(false);
+  // };
+  // const disableBody = (target) => disableBodyScroll(target);
+  // const enableBody = (target) => enableBodyScroll(target);
   const [url, setUrl] = useState();
 
   const readUrl = (event) => {
@@ -52,7 +52,7 @@ const Tours = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Tour" />
-      <Tour
+      {/* <Tour
         steps={steps}
         rounded={5}
         isOpen={opentour}
@@ -61,7 +61,7 @@ const Tours = (props) => {
         onRequestClose={closeTour}
         onAfterOpen={disableBody}
         onBeforeClose={enableBody}
-      />
+      /> */}
       <Container fluid={true}>
         <div className="user-profile">
           <Row>

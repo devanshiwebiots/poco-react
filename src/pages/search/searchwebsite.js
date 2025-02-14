@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import Breadcrumb from "../../component/common/breadcrumb/breadcrumb";
 import { images, smallImages } from "../../data/galleryData";
-import Lightbox from "react-18-image-lightbox";
+// import Lightbox from "react-18-image-lightbox";
 import { Container, Row, Col, Card, CardHeader, CardBody, Form, FormGroup, Label, Input, Media, Dropdown, DropdownMenu, DropdownToggle, DropdownItem, TabContent, TabPane, Nav, NavItem, NavLink, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 const Search = (props) => {
@@ -513,7 +513,7 @@ const Search = (props) => {
           </Col>
         </Row>
       </Container>
-      {photoIndex.isOpen && <Lightbox mainSrc={images[photoIndex.index]} nextSrc={images[(photoIndex.index + 1) % images.length]} prevSrc={images[(photoIndex.index + images.length - 1) % images.length]} imageTitle={photoIndex.index + 1 + "/" + images.length} onCloseRequest={() => setPhotoIndex({ ...photoIndex, isOpen: false })} onMovePrevRequest={onMovePrev} onMoveNextRequest={onMoveNext} />}
+      {/* {photoIndex.isOpen && <Lightbox mainSrc={images[photoIndex.index]} nextSrc={images[(photoIndex.index + 1) % images.length]} prevSrc={images[(photoIndex.index + images.length - 1) % images.length]} imageTitle={photoIndex.index + 1 + "/" + images.length} onCloseRequest={() => setPhotoIndex({ ...photoIndex, isOpen: false })} onMovePrevRequest={onMovePrev} onMoveNextRequest={onMoveNext} />} */}
     </Fragment>
   );
 };

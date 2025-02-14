@@ -3,7 +3,7 @@ import Breadcrumb from "../../common/breadcrumb/breadcrumb";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Typeahead } from "react-bootstrap-typeahead";
-import Dropzone from "react-dropzone-uploader";
+// import Dropzone from "react-dropzone-uploader";
 import {
   Container,
   Row,
@@ -124,7 +124,7 @@ const BlogPost = (props) => {
                 </Form>
                 <Form className="dropzone digits">
                   <div className="m-0 dz-message needsclick">
-                    <Dropzone
+                    {/* <Dropzone
                       getUploadParams={getUploadParams}
                       onChangeStatus={handleChangeStatus}
                       maxFiles={1}
@@ -135,7 +135,7 @@ const BlogPost = (props) => {
                         dropzone: { width: "100%", height: 50 },
                         dropzoneActive: { borderColor: "green" },
                       }}
-                    />
+                    /> */}
                   </div>
                 </Form>
                 <div className="btn-showcase">
