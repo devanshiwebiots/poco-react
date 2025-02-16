@@ -4,10 +4,10 @@ import { NavLink, TabContent, TabPane, Button, Modal, ModalHeader, ModalBody, Mo
 import { useDispatch, useSelector } from "react-redux";
 // import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
-import { ADD_LAYOUT, ADD_COLOR, ADD_MIXlAYOUT, ADD_COSTOMIZER, ROUTER_ANIMATION, ADD_SIDEBAR_TYPES } from "../../../redux/actionType";
 import { XCircle } from "react-feather";
+import { ADD_COLOR, ADD_COSTOMIZER, ADD_LAYOUT, ADD_MIXlAYOUT, ADD_SIDEBAR_TYPES, ROUTER_ANIMATION } from "../../../redux/customizer/CustomizerSlice";
 const ThemeCustomize = () => {
-  const configDB = useSelector((content) => content.Customizer.customizer);
+  const configDB = useSelector((state) => state.customizerReducer.customizer);
   const [showHorizontal, setShowHorizontal] = useState(true);
   const [boxLayout, setBoxLayout] = useState(true);
   const [modal, setModal] = useState();
@@ -33,18 +33,9 @@ const ThemeCustomize = () => {
   document.documentElement.dir = layout_type;
 
   useEffect(() => {
-    dispatch({ type: ADD_COSTOMIZER });
-
-    dispatch({
-      type: ADD_COLOR,
-      payload: {
-        color,
-        primary_color,
-        secondary_color,
-        layout_version,
-      },
-    });
-    dispatch({ type: ROUTER_ANIMATION, payload: layout_animation });
+    dispatch(ADD_COSTOMIZER());
+    dispatch(ADD_COLOR({color, primary_color, secondary_color, layout_version}));
+    dispatch(ROUTER_ANIMATION(layout_animation));
 
     //set sidebar_type
     document.querySelector(".page-wrapper").className = "page-wrapper " + sidebar_type;
@@ -62,15 +53,7 @@ const ThemeCustomize = () => {
       localStorage.setItem("secondary_color", config_secondary);
       localStorage.setItem("color", config_color);
       localStorage.setItem("layout_version", config_layout_version);
-      dispatch({
-        type: ADD_COLOR,
-        payload: {
-          color: config_color,
-          primary_color: config_primary,
-          secondary_color: config_secondary,
-          layout_version: config_layout_version,
-        },
-      });
+      dispatch(ADD_COLOR(color, primary_color, secondary_color, layout_version));
     }
 
     // eslint-disable-next-line
@@ -112,8 +95,7 @@ const ThemeCustomize = () => {
     if (boxLayout === false) {
       setBoxLayout(false);
     }
-
-    dispatch({ type: ADD_LAYOUT, payload: layout });
+    dispatch(ADD_LAYOUT(layout));
   };
 
   const handleCustomizerMix = (e) => {
@@ -123,10 +105,7 @@ const ThemeCustomize = () => {
     });
     document.body.className = e.currentTarget.getAttribute("data-attr");
     e.currentTarget.classList.add("active");
-    dispatch({
-      type: ADD_MIXlAYOUT,
-      payload: e.currentTarget.getAttribute("data-attr"),
-    });
+    dispatch(ADD_MIXlAYOUT(e.currentTarget.getAttribute("data-attr")));
   };
 
   const colorChangeTheme = (value) => {
@@ -207,8 +186,7 @@ const ThemeCustomize = () => {
 
   const selectAnimation = (e) => {
     localStorage.setItem("animation", e.target.value);
-    dispatch({ type: ROUTER_ANIMATION, payload: e.target.value });
-    // window.location.reload();
+    dispatch(ROUTER_ANIMATION(e.target.value));
   };
 
   const handleSidebarType = (e, type) => {
@@ -225,39 +203,39 @@ const ThemeCustomize = () => {
       document.querySelector(".iconsidebar-menu").classList.remove("iconbar-second-close");
       document.querySelector(".iconsidebar-menu").classList.remove("iconbar-mainmenu-close");
     }
-    dispatch({ type: ADD_SIDEBAR_TYPES, payload: { type } });
+    dispatch(ADD_SIDEBAR_TYPES({ type }));
   };
 
   return (
     <Fragment>
-      <div className='customizer-links'>
-        <div className='nav flex-column nac-pills' id='c-pills-tab' role='tablist' aria-orientation='vertical'>
-          <NavLink className={activeTab1 === "1" ? "active" : ""} onClick={() => setActiveTab1("1")} id='c-pills-home-tab'>
-            <div className='settings' onClick={openCustomizer}>
-              <img src={require("../../../assets/images/customize.png")} alt='' />
+      <div className="customizer-links">
+        <div className="nav flex-column nac-pills" id="c-pills-tab" role="tablist" aria-orientation="vertical">
+          <NavLink className={activeTab1 === "1" ? "active" : ""} onClick={() => setActiveTab1("1")} id="c-pills-home-tab">
+            <div className="settings" onClick={openCustomizer}>
+              <img src={require("../../../assets/images/customize.png")} alt="" />
             </div>
           </NavLink>
-          <NavLink className={activeTab1 === "2" ? "active" : ""} onClick={() => setActiveTab1("2")} id='c-pills-profile-tab'>
-            <div className='settings color-settings' onClick={openCustomizer}>
-              <img src={require("../../../assets/images/color-picker.png")} alt='' />
+          <NavLink className={activeTab1 === "2" ? "active" : ""} onClick={() => setActiveTab1("2")} id="c-pills-profile-tab">
+            <div className="settings color-settings" onClick={openCustomizer}>
+              <img src={require("../../../assets/images/color-picker.png")} alt="" />
             </div>
           </NavLink>
         </div>
       </div>
-      <div className='customizer-contain'>
-        <div className='customizer-body custom-scrollbar'>
+      <div className="customizer-contain">
+        <div className="customizer-body custom-scrollbar">
           <TabContent activeTab={activeTab1}>
-            <div className='customizer-header ps-0 mb-4 pt-0'>
-              <XCircle className='icon-close' onClick={closeCustomizer} />
+            <div className="customizer-header ps-0 mb-4 pt-0">
+              <XCircle className="icon-close" onClick={closeCustomizer} />
               <h5>Customizer</h5>
-              <p className='mb-0'>Customize &amp; Preview Real Time</p>
-              <Button color='primary' className='plus-popup mt-2' onClick={() => setModal(!modal)}>
+              <p className="mb-0">Customize &amp; Preview Real Time</p>
+              <Button color="primary" className="plus-popup mt-2" onClick={() => setModal(!modal)}>
                 Configuration
               </Button>
-              <Modal isOpen={modal} toggle={toggle} className='modal-body' centered={true}>
+              <Modal isOpen={modal} toggle={toggle} className="modal-body" centered={true}>
                 <ModalHeader toggle={toggle}>Modal title</ModalHeader>
                 <ModalBody>
-                  <Container fluid={true} className='bd-example-row'>
+                  <Container fluid={true} className="bd-example-row">
                     <Row>
                       <p>To replace our design with your desired theme. Please do configuration as mention</p>
                       <p>
@@ -308,65 +286,65 @@ const ThemeCustomize = () => {
                       Copy text
                     </Button>
                   </CopyToClipboard> */}
-                  <Button color='secondary' onClick={toggle}>
+                  <Button color="secondary" onClick={toggle}>
                     Cancel
                   </Button>
                 </ModalFooter>
               </Modal>
             </div>
-            <TabPane tabId='1'>
+            <TabPane tabId="1">
               <h6>Layout Type</h6>
-              <ul className='main-layout layout-grid'>
+              <ul className="main-layout layout-grid">
                 <li className={`${layout_type === "ltr" ? "active" : ""}`} onClick={() => handleLayout("ltr")}>
-                  <div className='header bg-light'>
+                  <div className="header bg-light">
                     <ul>
                       <li></li>
                       <li></li>
                       <li></li>
                     </ul>
                   </div>
-                  <div className='body'>
+                  <div className="body">
                     <ul>
-                      <li className='bg-dark sidebar'></li>
-                      <li className='bg-light body'>
+                      <li className="bg-dark sidebar"></li>
+                      <li className="bg-light body">
                         {" "}
-                        <span className='badge badge-dark'>LTR</span>
+                        <span className="badge badge-dark">LTR</span>
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li className={`${layout_type === "rtl" ? "active" : ""}`} onClick={() => handleLayout("rtl")}>
-                  <div className='header bg-light'>
+                  <div className="header bg-light">
                     <ul>
                       <li></li>
                       <li></li>
                       <li></li>
                     </ul>
                   </div>
-                  <div className='body'>
+                  <div className="body">
                     <ul>
-                      <li className='bg-light body'>
-                        <span className='badge badge-dark'>RTL</span>
+                      <li className="bg-light body">
+                        <span className="badge badge-dark">RTL</span>
                       </li>
-                      <li className='bg-dark sidebar'></li>
+                      <li className="bg-dark sidebar"></li>
                     </ul>
                   </div>
                 </li>
                 {boxLayout ? (
                   <li className={`${layout_type === "box-layout" ? "active" : ""}`} onClick={() => handleLayout("box-layout")}>
-                    <div className='header bg-light'>
+                    <div className="header bg-light">
                       <ul>
                         <li></li>
                         <li></li>
                         <li></li>
                       </ul>
                     </div>
-                    <div className='body'>
-                      <ul className='px-2'>
-                        <li className='bg-light sidebar'></li>
-                        <li className='bg-light body'>
+                    <div className="body">
+                      <ul className="px-2">
+                        <li className="bg-light sidebar"></li>
+                        <li className="bg-light body">
                           {" "}
-                          <span className='badge badge-dark'>Box</span>
+                          <span className="badge badge-dark">Box</span>
                         </li>
                       </ul>
                     </div>
@@ -375,36 +353,36 @@ const ThemeCustomize = () => {
                   ""
                 )}
               </ul>
-              <h6 className=''>Sidebar Type</h6>
-              <ul className='sidebar-type layout-grid'>
-                <li className='active' onClick={(e) => handleSidebarType(e, "default")}>
-                  <div className='header bg-light'>
+              <h6 className="">Sidebar Type</h6>
+              <ul className="sidebar-type layout-grid">
+                <li className="active" onClick={(e) => handleSidebarType(e, "default")}>
+                  <div className="header bg-light">
                     <ul>
                       <li></li>
                       <li></li>
                       <li></li>
                     </ul>
                   </div>
-                  <div className='body'>
+                  <div className="body">
                     <ul>
-                      <li className='bg-dark sidebar'></li>
-                      <li className='bg-light body'></li>
+                      <li className="bg-dark sidebar"></li>
+                      <li className="bg-light body"></li>
                     </ul>
                   </div>
                 </li>
                 {showHorizontal ? (
-                  <li data-attr='horizontal_sidebar' className='horizontal_sidebar' onClick={(e) => handleSidebarType(e, "horizontal_sidebar")}>
-                    <div className='header bg-light'>
+                  <li data-attr="horizontal_sidebar" className="horizontal_sidebar" onClick={(e) => handleSidebarType(e, "horizontal_sidebar")}>
+                    <div className="header bg-light">
                       <ul>
                         <li></li>
                         <li></li>
                         <li></li>
                       </ul>
                     </div>
-                    <div className='body'>
+                    <div className="body">
                       <ul>
-                        <li className='bg-dark sidebar horizontal-menu'></li>
-                        <li className='bg-light body'> </li>
+                        <li className="bg-dark sidebar horizontal-menu"></li>
+                        <li className="bg-light body"> </li>
                       </ul>
                     </div>
                   </li>
@@ -413,102 +391,102 @@ const ThemeCustomize = () => {
                 )}
               </ul>
               <h6>Router Animation</h6>
-              <Input type='select' defaultValue={layout_animation} name='selectMulti' onChange={selectAnimation}>
-                <option value='zoomfade'>Zoom Fade</option>
-                <option value='slidefade'>Silde Fade</option>
-                <option value='fadebottom'>Fade Bottom</option>
-                <option value='fade'>Fade</option>
-                <option value='zoomout'>Zoom Out</option>
-                <option value='none'>None</option>
+              <Input type="select" defaultValue={layout_animation} name="selectMulti" onChange={selectAnimation}>
+                <option value="zoomfade">Zoom Fade</option>
+                <option value="slidefade">Silde Fade</option>
+                <option value="fadebottom">Fade Bottom</option>
+                <option value="fade">Fade</option>
+                <option value="zoomout">Zoom Out</option>
+                <option value="none">None</option>
               </Input>
             </TabPane>
-            <TabPane tabId='2'>
+            <TabPane tabId="2">
               <h6>Light layout</h6>
-              <ul className='layout-grid customizer-color'>
-                <li className='color-layout' data-attr='light-1' data-primary='#7e37d8' data-secondary='#1ea6ec' onClick={() => colorChangeTheme("color-1")}>
+              <ul className="layout-grid customizer-color">
+                <li className="color-layout" data-attr="light-1" data-primary="#7e37d8" data-secondary="#1ea6ec" onClick={() => colorChangeTheme("color-1")}>
                   <div></div>
                 </li>
-                <li className='color-layout' data-attr='light-2' data-primary='#ff4c3b' data-secondary='#26c6da' onClick={() => colorChangeTheme("color-2")}>
+                <li className="color-layout" data-attr="light-2" data-primary="#ff4c3b" data-secondary="#26c6da" onClick={() => colorChangeTheme("color-2")}>
                   <div></div>
                 </li>
-                <li className='color-layout' data-attr='light-3' data-primary='#d64dcf' data-secondary='#8e24aa' onClick={() => colorChangeTheme("color-3")}>
+                <li className="color-layout" data-attr="light-3" data-primary="#d64dcf" data-secondary="#8e24aa" onClick={() => colorChangeTheme("color-3")}>
                   <div></div>
                 </li>
-                <li className='color-layout' data-attr='light-4' data-primary='#4c2fbf' data-secondary='#2e9de4' onClick={() => colorChangeTheme("color-4")}>
+                <li className="color-layout" data-attr="light-4" data-primary="#4c2fbf" data-secondary="#2e9de4" onClick={() => colorChangeTheme("color-4")}>
                   <div></div>
                 </li>
-                <li className='color-layout' data-attr='light-5' data-primary='#7c4dff' data-secondary='#7b1fa2' onClick={() => colorChangeTheme("color-5")}>
+                <li className="color-layout" data-attr="light-5" data-primary="#7c4dff" data-secondary="#7b1fa2" onClick={() => colorChangeTheme("color-5")}>
                   <div></div>
                 </li>
-                <li className='color-layout' data-attr='light-6' data-primary='#3949ab' data-secondary='#4fc3f7' onClick={() => colorChangeTheme("color-6")}>
-                  <div></div>
-                </li>
-              </ul>
-              <h6 className=''>Dark Layout</h6>
-              <ul className='layout-grid customizer-color dark'>
-                <li className='color-layout' data-attr='dark-1' data-primary='#7e37d8' data-secondary='#1ea6ec' onClick={() => colorChangeTheme("dark-1")}>
-                  <div></div>
-                </li>
-                <li className='color-layout' data-attr='dark-2' data-primary='#ff4c3b' data-secondary='#26c6da' onClick={() => colorChangeTheme("dark-2")}>
-                  <div></div>
-                </li>
-                <li className='color-layout' data-attr='dark-3' data-primary='#d64dcf' data-secondary='#8e24aa' onClick={() => colorChangeTheme("dark-3")}>
-                  <div></div>
-                </li>
-                <li className='color-layout' data-attr='dark-4' data-primary='#4c2fbf' data-secondary='#2e9de4' onClick={() => colorChangeTheme("dark-4")}>
-                  <div></div>
-                </li>
-                <li className='color-layout' data-attr='dark-5' data-primary='#7c4dff' data-secondary='#7b1fa2' onClick={() => colorChangeTheme("dark-5")}>
-                  <div></div>
-                </li>
-                <li className='color-layout' data-attr='dark-6' data-primary='#3949ab' data-secondary='#4fc3f7' onClick={() => colorChangeTheme("dark-6")}>
+                <li className="color-layout" data-attr="light-6" data-primary="#3949ab" data-secondary="#4fc3f7" onClick={() => colorChangeTheme("color-6")}>
                   <div></div>
                 </li>
               </ul>
-              <h6 className=''>Mix Layout</h6>
-              <ul className='layout-grid customizer-mix'>
-                <li className='color-layout active' data-attr='color-only' onClick={handleCustomizerMix}>
-                  <div className='header bg-light'>
+              <h6 className="">Dark Layout</h6>
+              <ul className="layout-grid customizer-color dark">
+                <li className="color-layout" data-attr="dark-1" data-primary="#7e37d8" data-secondary="#1ea6ec" onClick={() => colorChangeTheme("dark-1")}>
+                  <div></div>
+                </li>
+                <li className="color-layout" data-attr="dark-2" data-primary="#ff4c3b" data-secondary="#26c6da" onClick={() => colorChangeTheme("dark-2")}>
+                  <div></div>
+                </li>
+                <li className="color-layout" data-attr="dark-3" data-primary="#d64dcf" data-secondary="#8e24aa" onClick={() => colorChangeTheme("dark-3")}>
+                  <div></div>
+                </li>
+                <li className="color-layout" data-attr="dark-4" data-primary="#4c2fbf" data-secondary="#2e9de4" onClick={() => colorChangeTheme("dark-4")}>
+                  <div></div>
+                </li>
+                <li className="color-layout" data-attr="dark-5" data-primary="#7c4dff" data-secondary="#7b1fa2" onClick={() => colorChangeTheme("dark-5")}>
+                  <div></div>
+                </li>
+                <li className="color-layout" data-attr="dark-6" data-primary="#3949ab" data-secondary="#4fc3f7" onClick={() => colorChangeTheme("dark-6")}>
+                  <div></div>
+                </li>
+              </ul>
+              <h6 className="">Mix Layout</h6>
+              <ul className="layout-grid customizer-mix">
+                <li className="color-layout active" data-attr="color-only" onClick={handleCustomizerMix}>
+                  <div className="header bg-light">
                     <ul>
                       <li></li>
                       <li></li>
                       <li></li>
                     </ul>
                   </div>
-                  <div className='body'>
+                  <div className="body">
                     <ul>
-                      <li className='bg-light sidebar'></li>
-                      <li className='bg-light body'></li>
+                      <li className="bg-light sidebar"></li>
+                      <li className="bg-light body"></li>
                     </ul>
                   </div>
                 </li>
-                <li className='color-layout' data-attr='sidebar-dark' onClick={handleCustomizerMix}>
-                  <div className='header bg-light'>
+                <li className="color-layout" data-attr="sidebar-dark" onClick={handleCustomizerMix}>
+                  <div className="header bg-light">
                     <ul>
                       <li></li>
                       <li></li>
                       <li></li>
                     </ul>
                   </div>
-                  <div className='body'>
+                  <div className="body">
                     <ul>
-                      <li className='bg-dark sidebar'></li>
-                      <li className='bg-light body'></li>
+                      <li className="bg-dark sidebar"></li>
+                      <li className="bg-light body"></li>
                     </ul>
                   </div>
                 </li>
-                <li className='color-layout' data-attr='dark-only' onClick={handleCustomizerMix}>
-                  <div className='header bg-dark'>
+                <li className="color-layout" data-attr="dark-only" onClick={handleCustomizerMix}>
+                  <div className="header bg-dark">
                     <ul>
                       <li></li>
                       <li></li>
                       <li></li>
                     </ul>
                   </div>
-                  <div className='body'>
+                  <div className="body">
                     <ul>
-                      <li className='bg-dark sidebar'></li>
-                      <li className='bg-dark body'></li>
+                      <li className="bg-dark sidebar"></li>
+                      <li className="bg-dark body"></li>
                     </ul>
                   </div>
                 </li>

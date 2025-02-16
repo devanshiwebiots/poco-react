@@ -29,8 +29,8 @@ const Checkout = () => {
       errors.showMessages();
     }
   };
-  const cart = useSelector((content) => content.Cartdata.cart);
-  const symbol = useSelector((content) => content.data.symbol);
+  const cart = useSelector((content) => content.cartSlice.cart);
+  const symbol = useSelector((content) => content.productSlice.symbol);
   return (
     <Fragment>
       <Breadcrumb parent="Apps / ECommerce" title="Checkout" />
@@ -60,7 +60,7 @@ const Checkout = () => {
                       <Row>
                         <FormGroup className="mb-3 col-sm-6">
                           <Label className="form-label">Phone</Label>
-                          <input className="form-control" type="number" name="phone" {...register('phone', { required: true })} />
+                          <input className="form-control" type="text" name="phone" {...register('phone', { required: true })} />
                           <span style={{ color: '#ff5370' }}>{errors.phone && 'Please enter number for phone.'}</span>
                         </FormGroup>
                         <FormGroup className="mb-3 col-sm-6">
@@ -83,7 +83,7 @@ const Checkout = () => {
                         <span style={{ color: '#ff5370' }}>{errors.address && 'Please right your address .'}</span>
                       </FormGroup>
                       <FormGroup className="mb-3">
-                        <Label className="form-label" for="inputCity">TownCity</Label>
+                        <Label className="form-label" for="inputCity">City</Label>
                         <input className="form-control" type="text" name="city" {...register('city', { required: true })} />
                         <span style={{ color: '#ff5370' }}>{errors.city && 'select one city'}</span>
                       </FormGroup>

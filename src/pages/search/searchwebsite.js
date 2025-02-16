@@ -1,24 +1,13 @@
 import React, { useState, Fragment } from "react";
 import Breadcrumb from "../../component/common/breadcrumb/breadcrumb";
 import { images, smallImages } from "../../data/galleryData";
-// import Lightbox from "react-18-image-lightbox";
+import { Gallery, Item } from "react-photoswipe-gallery";
 import { Container, Row, Col, Card, CardHeader, CardBody, Form, FormGroup, Label, Input, Media, Dropdown, DropdownMenu, DropdownToggle, DropdownItem, TabContent, TabPane, Nav, NavItem, NavLink, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
-const Search = (props) => {
+const Search = () => {
   const [activeTab, setActiveTab] = useState("1");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
-  const initilindex = { index: 0, isOpen: false };
-  const [photoIndex, setPhotoIndex] = useState(initilindex);
-  const onMovePrev = () => {
-    const prev = (photoIndex.index + images.length - 1) % images.length;
-    setPhotoIndex({ ...photoIndex, index: prev });
-  };
-  const onMoveNext = () => {
-    const next = (photoIndex.index + 1) % images.length;
-    setPhotoIndex({ ...photoIndex, index: next });
-  };
 
   return (
     <Fragment>
@@ -196,200 +185,25 @@ const Search = (props) => {
                   <TabPane tabId="2">
                     <div className="info-block">
                       <p className="pb-4 digits">About 12,120 results (0.50 seconds)</p>
-                      <div className="my-gallery row gallery-with-description" id="aniimated-thumbnials">
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia">
-                          <a href="#javascript" data-size="1600x950">
-                            <Media
-                              src={smallImages[0]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 0,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[1]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 1,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[2]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 2,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[3]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 3,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[4]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 4,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[5]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 5,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[6]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 6,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                        <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope="">
-                          <a href="#javascript" itemProp="contentUrl" data-size="1600x950">
-                            <Media
-                              src={smallImages[7]}
-                              alt="Gallery"
-                              className="img-thumbnail"
-                              onClick={() =>
-                                setPhotoIndex({
-                                  ...photoIndex,
-                                  index: 7,
-                                  isOpen: true,
-                                })
-                              }
-                            />
-                            <div className="caption">
-                              <h4>Portfolio Title</h4>
-                              <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                            </div>
-                          </a>
-                          <figcaption itemProp="caption description">
-                            <h4>Portfolio Title</h4>
-                            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
-                          </figcaption>
-                        </figure>
-                      </div>
+                      <Gallery>
+                        <div className="my-gallery row gallery-with-description">
+                          {smallImages.map((image, index) => (
+                            <figure key={index} className="col-xl-3 col-sm-6">
+                              <Item original={image} thumbnail={image} width="1600" height="950">
+                                {({ ref, open }) => (
+                                  <a href="#javascript" ref={ref} onClick={open}>
+                                    <img src={image} alt="Gallery" className="img-thumbnail" />
+                                  </a>
+                                )}
+                              </Item>
+                              <figcaption>
+                                <h4>Portfolio Title</h4>
+                                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                              </figcaption>
+                            </figure>
+                          ))}
+                        </div>
+                      </Gallery>
                     </div>
                     <div className="info-block">
                       <Pagination className="pagination-primary">

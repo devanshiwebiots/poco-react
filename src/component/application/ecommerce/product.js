@@ -4,17 +4,20 @@ import Breadcrumb from "../.././common/breadcrumb/breadcrumb";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col, Card, CardHeader, CardBody, Button, ListGroup, Form, FormGroup, Input, Media, Modal, ModalHeader, InputGroup, InputGroupText } from "reactstrap";
-import { GET_LIST, SEARCH_BY, SORT_BY, ADD_TO_CART, ADD_TO_WISHLIST } from "../../../redux/actionType";
 import { Grid, List } from "react-feather";
 import Allfilters from "../../../component/application/ecommerce/filters/allfilters";
 import Carousal from "../../../component/application/ecommerce/filters/Carousal";
 import { getVisibleproducts } from "../../../redux/service/index";
 import errorImg from "../../../assets/images/search-not-found.png";
+import { ADD_TO_WISHLIST } from "../../../redux/wishlist/WishlistSlice";
+import { GET_LIST } from "../../../redux/product/ProductSlice";
+import { SEARCH_BY, SORT_BY } from "../../../redux/filter/FilterSlice";
+import { ADD_TO_CART } from "../../../redux/cart/CartSlice";
 const Product = () => {
   const history = useNavigate();
   const dispatch = useDispatch();
-  const symbol = useSelector((content) => content.data.symbol);
-  const data = useSelector((content) => content.data.productItems);
+  const symbol = useSelector((content) => content.productSlice.symbol);
+  const data = useSelector((content) => content.productSlice.productItems);
   const [layoutColumns, setLayoutColumns] = useState(3);
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
@@ -24,11 +27,12 @@ const Product = () => {
   const [searchKeyword, setSearchKeyword] = useState("");
   const [stock, setStock] = useState("");
 
-  const filters = useSelector((content) => content.filters);
+  const filters = useSelector((content) => content.filterSlice);
+  const searchQuery = useSelector((state) => state.filterSlice.searchBy);
   const products = getVisibleproducts(data, filters);
 
   useEffect(() => {
-    dispatch({ type: GET_LIST });
+    dispatch(GET_LIST());
   });
 
   const gridLayout = () => {
@@ -43,7 +47,7 @@ const Product = () => {
   };
 
   const filterSortFunc = (event) => {
-    dispatch({ type: SORT_BY, sort_by: event });
+    dispatch(SORT_BY(event));
   };
 
   const listLayout = () => {
@@ -76,11 +80,11 @@ const Product = () => {
   };
 
   const addcart = (product, qty) => {
-    dispatch({ type: ADD_TO_CART, payload: { product, qty } });
+    dispatch(ADD_TO_CART({ product, qty }));
     history(`${process.env.PUBLIC_URL}/ecommerce-app/cart`);
   };
   const addWishList = (product) => {
-    dispatch({ type: ADD_TO_WISHLIST, payload: { product } });
+    dispatch(ADD_TO_WISHLIST({ product }));
     history(`${process.env.PUBLIC_URL}/ecommerce-app/wishlist`);
   };
 
@@ -118,7 +122,7 @@ const Product = () => {
 
   const handleSearchKeyword = (keyword) => {
     setSearchKeyword(keyword);
-    dispatch({ type: SEARCH_BY, search: keyword });
+    dispatch(SEARCH_BY(keyword));
   };
   return (
     <Fragment>
@@ -221,7 +225,7 @@ const Product = () => {
               <Col xl="9" sm="12 box-col-7">
                 <Form>
                   <FormGroup className="m-0 form-group">
-                    <Input className="form-control" type="text" placeholder="search" defaultValue={searchKeyword} onChange={(e) => handleSearchKeyword(e.target.value)} />
+                    <Input className="form-control" type="text" placeholder="search" defaultValue={searchQuery} onChange={(e) => handleSearchKeyword(e.target.value)} />
                     <i className="fa fa-search"></i>
                   </FormGroup>
                 </Form>
@@ -231,7 +235,7 @@ const Product = () => {
           </div>
           {/* Product list  start*/}
           <div className="product-wrapper-grid">
-            {searchKeyword.length > 0 ? (
+            {searchQuery.length > 0 && products.length === 0 ? (
               <div className="search-not-found text-center">
                 <div>
                   <img className="img-fluid second-search" src={errorImg} alt="" />
@@ -303,7 +307,7 @@ const Product = () => {
                         <Media className="img-fluid" src={singleProduct.img} alt="" />
                       </Col>
                       <Col md="6" className="product-details  text-start">
-                        <h4>{singleProduct.category}</h4>
+                        <h4>{singleProduct.name}</h4>
                         <div className="product-price font-primary" style={{ fontSize: "22px", marginBottom: "10px" }}>
                           <del>
                             {symbol}
@@ -318,7 +322,8 @@ const Product = () => {
                             padding: "20px 0",
                             borderTop: "1px dotted #aaaaaa",
                             borderBottom: "1px dotted #aaaaaa",
-                          }}>
+                          }}
+                        >
                           <h6 className="f-w-600">Product Details</h6>
                           <p className="mb-0">{singleProduct.discription}</p>
                         </div>
@@ -328,7 +333,8 @@ const Product = () => {
                               display: "flex",
                               marginTop: "20px",
                               marginBottom: "20px",
-                            }}>
+                            }}
+                          >
                             <li>
                               <Button color="outline-light">M</Button>
                             </li>

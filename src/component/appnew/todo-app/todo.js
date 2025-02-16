@@ -3,10 +3,10 @@ import React, { useState, useEffect, Fragment } from "react";
 import Breadcrumb from "../../common/breadcrumb/breadcrumb";
 import { Container, Row, Col, Card, CardBody, CardHeader, Button } from "reactstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { GET_LIST, ADD_NEW_ITEM, REMOVE_ITEM, MARK_ALL_ITEMS, SELECTED_ITEM } from "../../../redux/actionType";
 import { toast } from "react-toastify";
-const Todo = (props) => {
-  const todoList = useSelector((content) => content.Todoapp.allTodoItems.filter((item) => item.isStatus !== "deleted"));
+import { ADD_NEW_ITEM, GET_LIST, MARK_ALL_ITEMS, REMOVE_ITEM, SELECTED_ITEM } from "../../../redux/todo/TodoSlice";
+const Todo = () => {
+  const todoList = useSelector((state) => state.todoSlice.allTodoItems.filter((item) => item.isStatus !== "deleted"));
   const dispatch = useDispatch();
   const [addTask, setAddTask] = useState("");
   const [border_danger, setBorder_danger] = useState("");
@@ -15,7 +15,7 @@ const Todo = (props) => {
   const [markAll, setMarkAll] = useState(false);
 
   useEffect(() => {
-    dispatch({ type: GET_LIST });
+    dispatch(GET_LIST());
   }, [dispatch]);
 
   const addNewTask = () => {
@@ -23,7 +23,7 @@ const Todo = (props) => {
       document.querySelector(".ng-valid").classList.remove("border-danger");
       document.querySelector(".ng-valid").classList.add("border-danger");
     } else {
-      dispatch({ type: ADD_NEW_ITEM, payload: task });
+      dispatch(ADD_NEW_ITEM(task));
       setAddTask("");
       setTask("");
       document.getElementById("newtask").value = "";
@@ -33,18 +33,18 @@ const Todo = (props) => {
     }
   };
   const handleRemoveTodo = (todoId) => {
-    dispatch({ type: REMOVE_ITEM, payload: todoId });
+    dispatch(REMOVE_ITEM(todoId));
     toast.success("Deleted Task !");
   };
   const handleMarkedTodo = (itemId, itemStatus) => {
     if (itemStatus === "completed") {
       setStatus("pending");
-      dispatch({ type: SELECTED_ITEM, payload: { itemId, status } });
+      dispatch(SELECTED_ITEM({ itemId, status }));
       toast.success("Task Completed !");
     }
     if (itemStatus === "pending") {
       setStatus("completed");
-      dispatch({ type: SELECTED_ITEM, payload: { itemId, status } });
+      dispatch(SELECTED_ITEM({ itemId, status }));
       toast.error(" Task In-completed !");
     }
   };
@@ -55,7 +55,7 @@ const Todo = (props) => {
     } else {
       toast.success("All Task Completed !");
     }
-    dispatch({ type: MARK_ALL_ITEMS, payload: markAll });
+    dispatch(MARK_ALL_ITEMS(markAll));
   };
 
   const openTaskWrapper = () => {
@@ -76,42 +76,42 @@ const Todo = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent='Apps / User' title='To-Do' />
+      <Breadcrumb parent="Apps / User" title="To-Do" />
       <Container fluid={true}>
         <Row>
-          <Col xl='12'>
+          <Col xl="12">
             <Card>
               <CardHeader>
                 <h5>To-Do</h5>
               </CardHeader>
               <CardBody>
-                <div className='todo'>
-                  <div className='todo-list-wrapper'>
-                    <div className='todo-list-container'>
-                      <div className='mark-all-tasks'>
-                        <div className='mark-all-tasks-container'>
-                          <span className='mark-all-btn' id='mark-all-finished' role='button'>
-                            <span className='btn-label'>Mark all as finished</span>
-                            <span className='action-box completed' onClick={markAllStatus}>
+                <div className="todo">
+                  <div className="todo-list-wrapper">
+                    <div className="todo-list-container">
+                      <div className="mark-all-tasks">
+                        <div className="mark-all-tasks-container">
+                          <span className="mark-all-btn" id="mark-all-finished" role="button">
+                            <span className="btn-label">Mark all as finished</span>
+                            <span className="action-box completed" onClick={markAllStatus}>
                               {markAll && (
-                                <i className='icon'>
-                                  <i className='icon-check'></i>
+                                <i className="icon">
+                                  <i className="icon-check"></i>
                                 </i>
                               )}
                             </span>
                           </span>
-                          <span className='mark-all-btn move-down' id='mark-all-incomplete' role='button'>
-                            <span className='btn-label'>Mark all as Incomplete</span>
-                            <span className='action-box'>
-                              <i className='icon'>
-                                <i className='icon-check'></i>
+                          <span className="mark-all-btn move-down" id="mark-all-incomplete" role="button">
+                            <span className="btn-label">Mark all as Incomplete</span>
+                            <span className="action-box">
+                              <i className="icon">
+                                <i className="icon-check"></i>
                               </i>
                             </span>
                           </span>
                         </div>
                       </div>
-                      <div className='todo-list-body'>
-                        <ul id='todo-list'>
+                      <div className="todo-list-body">
+                        <ul id="todo-list">
                           {todoList.length > 0
                             ? todoList.map((todo, index) => (
                                 <li className={"task " + todo.status} key={index}>
@@ -135,30 +135,30 @@ const Todo = (props) => {
                             : ""}
                         </ul>
                       </div>
-                      <div className='todo-list-footer'>
-                        <div className='add-task-btn-wrapper'>
-                          <span className='add-task-btn'>
-                            <Button color='primary' onClick={openTaskWrapper}>
-                              <i className='icon-plus'></i> Add new task
+                      <div className="todo-list-footer">
+                        <div className="add-task-btn-wrapper">
+                          <span className="add-task-btn">
+                            <Button color="primary" onClick={openTaskWrapper}>
+                              <i className="icon-plus"></i> Add new task
                             </Button>
                           </span>
                         </div>
                         <div className={"new-task-wrapper" + addTask}>
-                          <textarea className={"ng-untouched ng-pristine ng-valid" + border_danger} id='newtask' placeholder='Enter new task here. . .' defaultValue={task} onChange={onTaskChanged}></textarea>
-                          <Button color='danger' className='cancel-btn' id='close-task-panel' onClick={closeTaskWrapper}>
+                          <textarea className={"ng-untouched ng-pristine ng-valid" + border_danger} id="newtask" placeholder="Enter new task here. . ." defaultValue={task} onChange={onTaskChanged}></textarea>
+                          <Button color="danger" className="cancel-btn" id="close-task-panel" onClick={closeTaskWrapper}>
                             Close
                           </Button>
-                          <Button color='success' className='ms-3 add-new-task-btn' id='add-task' onClick={addNewTask}>
+                          <Button color="success" className="ms-3 add-new-task-btn" id="add-task" onClick={addNewTask}>
                             Add Task
                           </Button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className='notification-popup hide'>
+                  <div className="notification-popup hide">
                     <p>
-                      <span className='task'></span>
-                      <span className='notification-text'></span>
+                      <span className="task"></span>
+                      <span className="notification-text"></span>
                     </p>
                   </div>
                 </div>

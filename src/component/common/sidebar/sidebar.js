@@ -6,14 +6,13 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const [margin, setMargin] = useState(0);
   const [mainmenu, setMainMenu] = useState(MENUITEMS);
-  const configDB = useSelector((content) => content.Customizer.customizer);
+  const configDB = useSelector((state) => state.customizerReducer.customizer);
   const sidebar_type = configDB.settings.sidebar.wrapper;
   const layout_type = useState(configDB.settings.layout_type);
   const [hideRightArrow, setHideRightArrow] = useState(true);
   const [hideLeftArrow, setHideLeftArrow] = useState(true);
   const [hideLeftArrowRTL, setHideLeftArrowRTL] = useState(true);
   const [hideRightArrowRTL, setHideRightArrowRTL] = useState(true);
-
   const useWindowSize = (wrapper) => {
     const [size, setSize] = useState([0, 0]);
 
@@ -43,7 +42,7 @@ const Sidebar = () => {
     return size;
   };
 
-  // eslint-disable-next-line
+  // // eslint-disable-next-line
   const [width, height] = useWindowSize(sidebar_type);
 
   useEffect(() => {
@@ -169,7 +168,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='iconsidebar-menu'>
+    <div className="iconsidebar-menu">
       <div className='sidebar custom-scrollbar'>
         <ul className='iconMenu-bar custom-scrollbar'>
           <li className={`left-arrow ${layout_type === "rtl" ? (hideLeftArrowRTL ? "d-none" : "hideLeftArrowRTL") : hideLeftArrow ? "d-none" : "hideLeftArrow"}`} onClick={configDB.sidebar_type === "horizontal_sidebar" && layout_type === "rtl" ? scrollToLeftRTL : scrollToLeft}>

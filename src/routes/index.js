@@ -17,9 +17,12 @@ import Comingsoon from "../pages/comingSoon/comingsoon";
 import ComingsoonVideo from "../pages/comingSoon/comingsoonVideo";
 import ComingsoonImg from "../pages/comingSoon/comingsoonImg";
 import { routes } from "./layouts-routes";
+import Layout from "../component/common/layout";
+import Default from "../component/general/dashboard/default";
 
 const MainRoutes = () => {
   const [currentUser, setCurrentUser] = useState(false);
+
   useEffect(() => {
     const abortController = new AbortController();
     const color = localStorage.getItem("color");
@@ -37,11 +40,14 @@ const MainRoutes = () => {
   return (
     <>
       <Routes>
-        <Route exact path='/' element={<PrivateRoute />}>
-          {routes.map(({ path, Component }, i) => (
-            <Route element={<AppLayout />} key={i}>
-              {currentUser !== null ? <Route exact path={`${process.env.PUBLIC_URL}`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/default`} />} /> : ""}
-              <Route path={path} element={Component} />
+        <Route exact path="/" element={<PrivateRoute />}>
+          {/* {currentUser !== null ? <Route exact path={`${process.env.PUBLIC_URL}`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/default`} />} /> : ""} */}
+          <Route element={<Layout />}>
+            <Route exact path={`${process.env.PUBLIC_URL}/dashboard/default`} element={<Default />} />
+          </Route>
+          {routes.map(({ path, element }, i) => (
+            <Route element={<Layout />} key={i}>
+              <Route path={path} element={element} />
             </Route>
           ))}
         </Route>

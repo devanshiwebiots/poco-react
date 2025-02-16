@@ -1,38 +1,55 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import Breadcrumb from "../common/breadcrumb/breadcrumb";
 import { Container, Row, Col, Card, CardHeader, Media } from "reactstrap";
-// import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-// import Tour from "reactour";
+import { TourGuideClient } from "@sjmc11/tourguidejs";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+
 const steps = [
   {
-    selector: ".step1",
+    target: ".step1",
     content: "This is Profile image",
   },
   {
-    selector: ".step2",
+    target: ".step2",
     content: "Change Profile image here",
   },
   {
-    selector: ".step3",
+    target: ".step3",
     content: "This is the your details",
   },
   {
-    selector: ".step4",
+    target: ".step4",
     content: "This is your Social details",
   },
   {
-    selector: ".step5",
+    target: ".step5",
     content: "This is the your first Post",
   },
 ];
 const Tours = (props) => {
-  // const [opentour, setopentour] = useState(true);
-  // const closeTour = () => {
-  //   setopentour(false);
-  // };
-  // const disableBody = (target) => disableBodyScroll(target);
-  // const enableBody = (target) => enableBodyScroll(target);
+    const tourRef = useRef(null);
+    const [isTourOpen, setIsTourOpen] = useState(false);
+
+    useEffect(() => {
+      try {
+        tourRef.current = new TourGuideClient({ steps: steps });
+      } catch (error) {
+        toast.error("Error initializing TourGuideClient:" + error);
+      }
+
+      return () => tourRef.current?.destroy?.();
+    }, []);
+
+    useEffect(() => {
+      const timer = setTimeout(() => setIsTourOpen(true), 1000);
+      return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+      if (isTourOpen) tourRef.current?.start?.();
+    }, [isTourOpen]);
+ 
   const [url, setUrl] = useState();
 
   const readUrl = (event) => {
@@ -52,16 +69,6 @@ const Tours = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Tour" />
-      {/* <Tour
-        steps={steps}
-        rounded={5}
-        isOpen={opentour}
-        disableInteraction={true}
-        disableKeyboardNavigation={false}
-        onRequestClose={closeTour}
-        onAfterOpen={disableBody}
-        onBeforeClose={enableBody}
-      /> */}
       <Container fluid={true}>
         <div className="user-profile">
           <Row>

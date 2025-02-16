@@ -183,22 +183,22 @@ class Invoice extends Component {
   }
 }
 const PrintComponent = () => {
-  const cart = useSelector((content) => content.Cartdata.cart);
-  const symbol = useSelector((content) => content.data.symbol);
+  const cart = useSelector((content) => content.cartSlice.cart);
+  const symbol = useSelector((content) => content.productSlice.symbol);
   const componentRef = useRef();
   return (
     <Fragment>
       <Breadcrumb parent="Apps / ECommerce" title="Invoice" />
       <Invoice cart={cart} symbol={symbol} ref={componentRef} />
       <Col sm="12" className="text-center pb-5">
-        <ReactToPrint
+        {/* <ReactToPrint
           trigger={() => (
             <Button color="primary" className="me-2">
               Print
             </Button>
           )}
           content={() => componentRef.current}
-        />
+        /> */}
         <Link to={`${process.env.PUBLIC_URL}/ecommerce-app/product`}>
           <Button color="secondary">Cancel</Button>
         </Link>

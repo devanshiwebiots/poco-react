@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Range, getTrackBackground } from "react-range";
 import { getBrands, getColors } from "../../../../redux/service/index";
-import { filterBrand, filterColor, filterPrice } from "../../../../redux/filter/action";
+// import { filterBrand, filterColor, filterPrice } from "../../../../redux/filter/action";
 import { useDispatch, useSelector } from "react-redux";
+import { FILTER_BRAND, FILTER_COLOR, FILTER_PRICE } from "../../../../redux/filter/FilterSlice";
 
 const Allfilters = () => {
   const STEP = 10;
@@ -10,20 +11,22 @@ const Allfilters = () => {
   const MAX = 950;
   const [values, setValues] = useState([150, 650]);
 
-  const data = useSelector((content) => content.data.productItems);
+  const data = useSelector((content) => content.productSlice.productItems);
   const brands = getBrands(data);
   const colors = getColors(data);
-  const filteredBrand = useSelector((content) => content.filters.brand);
+  const filteredBrand = useSelector((content) => content.filterSlice.brand);
   const dispatch = useDispatch();
 
-  const clickBrandHendle = (event, brands) => {
-    var index = brands.indexOf(event.target.value);
+ const clickBrandHendle = (event, brands) => {
+   let updatedBrands = [...brands]; 
+   if (event.target.checked) {
+     updatedBrands.push(event.target.value); 
+   } else {
+     updatedBrands = updatedBrands.filter((brand) => brand !== event.target.value); 
+   }
+   dispatch(FILTER_BRAND(updatedBrands)); 
+ };
 
-    if (event.target.checked === true) brands.push(event.target.value); // push in array checked value
-    else brands.splice(index, 1); // removed in array unchecked value
-
-    dispatch(filterBrand(brands));
-  };
 
   const colorHandle = (event, color) => {
     var elems = document.querySelectorAll(".color-selector ul li");
@@ -31,12 +34,12 @@ const Allfilters = () => {
       el.classList.remove("active");
     });
     event.target.classList.add("active");
-    dispatch(filterColor(color));
+    dispatch(FILTER_COLOR(color));
   };
 
   const priceHandle = (value) => {
     setValues(value);
-    dispatch(filterPrice(value));
+    dispatch(FILTER_PRICE({ min: value[0], max: value[1] }));
   };
 
   return (
