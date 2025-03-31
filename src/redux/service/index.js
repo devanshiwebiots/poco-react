@@ -75,7 +75,6 @@ export const getVisibleproducts = (
       const endPriceMatch =
         typeof value.max !== "number" || product.price <= value.max;
 
-      // const searchByName = product.name.toLowerCase().indexOf(searchBy) > -1;
       let searchByName = searchBy ? product.name.toLowerCase().includes(searchBy.toLowerCase()) : true;
       return (
         brandMatch &&

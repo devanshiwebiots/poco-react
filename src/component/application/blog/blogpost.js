@@ -3,7 +3,6 @@ import Breadcrumb from "../../common/breadcrumb/breadcrumb";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { Typeahead } from "react-bootstrap-typeahead";
-// import Dropzone from "react-dropzone-uploader";
 import {
   Container,
   Row,
@@ -17,15 +16,10 @@ import {
   Input,
   Button,
 } from "reactstrap";
+import CommonFileUpload from "../../common/CommonFileUpload";
 
 const BlogPost = (props) => {
   const data = [{ name: "Lifestyle" }, { name: "Travel" }];
-  const getUploadParams = ({ meta }) => {
-    return { url: "https://httpbin.org/post" };
-  };
-
-  // called every time a file's `status` changes
-  const handleChangeStatus = ({ meta, file }, status) => {};
 
   return (
     <Fragment>
@@ -124,18 +118,7 @@ const BlogPost = (props) => {
                 </Form>
                 <Form className="dropzone digits">
                   <div className="m-0 dz-message needsclick">
-                    {/* <Dropzone
-                      getUploadParams={getUploadParams}
-                      onChangeStatus={handleChangeStatus}
-                      maxFiles={1}
-                      multiple={false}
-                      canCancel={false}
-                      inputContent="Drop files here or click to upload."
-                      styles={{
-                        dropzone: { width: "100%", height: 50 },
-                        dropzoneActive: { borderColor: "green" },
-                      }}
-                    /> */}
+                  <CommonFileUpload />
                   </div>
                 </Form>
                 <div className="btn-showcase">

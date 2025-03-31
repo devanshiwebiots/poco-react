@@ -41,7 +41,6 @@ const Header = (props) => {
   }
 
   useEffect(() => {
-    // useWindowSize();
     if (width <= 991) {
       setSidebar("iconbar-second-close");
       document.querySelector(".iconsidebar-menu").classList.add("iconbar-second-close");
@@ -140,14 +139,6 @@ const Header = (props) => {
       setSidebar("iconbar-second-close");
       document.querySelector(".iconsidebar-menu").classList.remove("iconbar-mainmenu-close");
       document.querySelector(".iconsidebar-menu").classList.add("iconbar-second-close");
-      // } else if (sidebartoggle === "iconbar-mainmenu-close") {
-      //   setSidebar("iconbar-second-close");
-      //   document
-      //     .querySelector(".iconsidebar-menu")
-      //     .classList.add("iconbar-second-close");
-      //   document
-      //     .querySelector(".iconsidebar-menu")
-      //     .classList.remove("iconbar-mainmenu-close");
     } else if (isOpen && sidebartoggle === "iconbar-second-close") {
       setSidebar("iconsidebar-menu");
       document.querySelector(".iconsidebar-menu").classList.remove("iconbar-second-close");

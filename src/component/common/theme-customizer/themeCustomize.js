@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Container, Row } from "reactstrap";
 import { NavLink, TabContent, TabPane, Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
-// import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-toastify";
 import { XCircle } from "react-feather";
 import { ADD_COLOR, ADD_COSTOMIZER, ADD_LAYOUT, ADD_MIXlAYOUT, ADD_SIDEBAR_TYPES, ROUTER_ANIMATION } from "../../../redux/customizer/CustomizerSlice";
@@ -272,20 +271,24 @@ const ThemeCustomize = () => {
                   </Container>
                 </ModalBody>
                 <ModalFooter>
-                  {/* <CopyToClipboard text={JSON.stringify(configDB)}>
-                    <Button
-                      color='primary'
-                      className='notification'
-                      onClick={() => {
-                        toast.success("Code Copied to clipboard !", {
-                          position: toast.POSITION.BOTTOM_RIGHT,
+                  <Button
+                    color="primary"
+                    className="notification"
+                    onClick={() => {
+                    navigator.clipboard.writeText(JSON.stringify(configDB))
+                        .then(() => {
+                        toast.success("Code Copied to clipboard!", {
+                            position: "bottom-right"
                         });
-                        toggle();
-                      }}
-                    >
-                      Copy text
-                    </Button>
-                  </CopyToClipboard> */}
+                        })
+                        .catch(() => {
+                        toast.error("Failed to copy!", {
+                            position: "bottom-right"
+                        });
+                        });
+                    }}>
+                    {"Copy Text"}
+                  </Button>
                   <Button color="secondary" onClick={toggle}>
                     Cancel
                   </Button>

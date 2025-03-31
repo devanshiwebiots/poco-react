@@ -4,13 +4,13 @@ import {Container,Row,Col,Card,CardHeader,CardBody} from 'reactstrap'
 const Weathericons = (props) =>  {
     return (
         <Fragment>
-        <Breadcrumb parent="Ui Elements" title="Whether Icon"/>
+        <Breadcrumb parent="Ui Elements" title="Weather Icon"/>
         <Container fluid={true}>
             <Row>
                 <Col sm="12">
                     <Card>
                         <CardHeader>
-                            <h5 className="m-b-0">Whether Icons With Animations</h5>
+                            <h5 className="m-b-0">Weather Icons With Animations</h5>
                         </CardHeader>
                         <CardBody>
                             <Row className="icon-lists whether-icon">

@@ -10,27 +10,27 @@ import {
   Button,
 } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
-const Boostrapnotify = (props) => {
+const BoostrapNotify = (props) => {
   const basictoaster = (toastname) => {
     switch (toastname) {
       case "basicsuccessToast":
         toast.success("Success Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
         });
         break;
       case "basicinfoToast":
         toast.info("Info Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
         });
         break;
       case "basicwarningToast":
         toast.warn("Warning Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
         });
         break;
       case "basicdangerToast":
         toast.error("Danger Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
         });
         break;
       default:
@@ -41,22 +41,22 @@ const Boostrapnotify = (props) => {
     switch (toastname) {
       case "directionssuccessToast":
         toast.success("Success Notification !", {
-          position: toast.POSITION.TOP_CENTER,
+          position: "top-center",
         });
         break;
       case "directionsinfoToast":
         toast.info("Info Notification !", {
-          position: toast.POSITION.BOTTOM_CENTER,
+          position: "bottom-center",
         });
         break;
       case "directionswarningToast":
         toast.warn("Warning Notification !", {
-          position: toast.POSITION.BOTTOM_LEFT,
+          position: "bottom-left",
         });
         break;
       case "directionsdangerToast":
         toast.error("Danger Notification !", {
-          position: toast.POSITION.BOTTOM_RIGHT,
+          position: "bottom-right",
         });
         break;
       default:
@@ -68,25 +68,25 @@ const Boostrapnotify = (props) => {
     switch (toastname) {
       case "autoclose1Toast":
         toast.success("Success Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 15000,
         });
         break;
       case "autoclose2Toast":
         toast.info("Info Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 5000,
         });
         break;
       case "autoclose3Toast":
         toast.warn("Warning Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 1000,
         });
         break;
       case "autoclose4Toast":
         toast.error("Danger Notification !", {
-          position: toast.POSITION.TOP_RIGHT,
+          position: "top-right",
           autoClose: 500,
         });
         break;
@@ -217,4 +217,4 @@ const Boostrapnotify = (props) => {
   );
 };
 
-export default Boostrapnotify;
+export default BoostrapNotify;

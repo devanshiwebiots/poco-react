@@ -322,8 +322,7 @@ const Product = () => {
                             padding: "20px 0",
                             borderTop: "1px dotted #aaaaaa",
                             borderBottom: "1px dotted #aaaaaa",
-                          }}
-                        >
+                          }}>
                           <h6 className="f-w-600">Product Details</h6>
                           <p className="mb-0">{singleProduct.discription}</p>
                         </div>
@@ -333,8 +332,7 @@ const Product = () => {
                               display: "flex",
                               marginTop: "20px",
                               marginBottom: "20px",
-                            }}
-                          >
+                            }}>
                             <li>
                               <Button color="outline-light">M</Button>
                             </li>

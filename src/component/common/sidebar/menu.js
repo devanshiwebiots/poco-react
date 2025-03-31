@@ -233,12 +233,12 @@ export const MENUITEMS = [
         path: `${process.env.PUBLIC_URL}/ui-element/featherIcons`,
       },
       {
-        title: "Thimify Icon ",
+        title: "Themify Icon ",
         type: "link",
         path: `${process.env.PUBLIC_URL}/ui-element/themifyIcons`,
       },
       {
-        title: "Whether Icon ",
+        title: "Weather Icon ",
         type: "link",
         path: `${process.env.PUBLIC_URL}/ui-element/weatherIcons`,
       },
@@ -433,6 +433,16 @@ export const MENUITEMS = [
         path: `${process.env.PUBLIC_URL}/ecommerce-app/orederhistory`,
       },
       {
+        title: "Cart",
+        type: "link",
+        path: `${process.env.PUBLIC_URL}/ecommerce-app/cart`,
+      },
+      {
+        title: "Wishlist",
+        type: "link",
+        path: `${process.env.PUBLIC_URL}/ecommerce-app/wishlist`,
+      },
+      {
         title: "Invoice",
         type: "link",
         path: `${process.env.PUBLIC_URL}/ecommerce-app/invoice`,
@@ -565,11 +575,6 @@ export const MENUITEMS = [
         path: `${process.env.PUBLIC_URL}/appnew/chat-app`,
       },
       {
-        title: "Contact App",
-        type: "link",
-        path: `${process.env.PUBLIC_URL}/appnew/contact-app`,
-      },
-      {
         title: "Full Calender Basic ",
         type: "link",
         path: `${process.env.PUBLIC_URL}/calender/basic`,
@@ -695,7 +700,7 @@ export const MENUITEMS = [
         path: `${process.env.PUBLIC_URL}/pages/forget-password`,
       },
       {
-        title: "Coming Simple",
+        title: "Coming Soon",
         type: "link",
         path: `${process.env.PUBLIC_URL}/pages/comingsoon`,
       },

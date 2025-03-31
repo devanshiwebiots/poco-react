@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, Component } from "react";
+import React, { Fragment, useRef } from "react";
 import Breadcrumb from "../.././common/breadcrumb/breadcrumb";
 import {
   Container,
@@ -12,12 +12,11 @@ import {
   Form,
 } from "reactstrap";
 import { getCartTotal } from "../../../redux/service/index";
-import ReactToPrint from "react-to-print";
+import {useReactToPrint} from "react-to-print";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-class Invoice extends Component {
-  render() {
-    const { cart, symbol } = this.props;
+const Invoice = React.forwardRef(({ cart, symbol }, ref) => {
+
     return (
       <Fragment>
         <Container fluid={true}>
@@ -25,7 +24,7 @@ class Invoice extends Component {
             <Col sm="12">
               <Card>
                 <CardBody>
-                  <div className="invoice">
+                  <div className="invoice" ref={ref}>
                     <div>
                       <div>
                         <Row>
@@ -133,16 +132,22 @@ class Invoice extends Component {
                                         {item.price}
                                       </p>
                                     </td>
+                                    <td>
+                                      <p className='itemtext digits'>
+                                        {symbol}
+                                        {item.qty * item.price}
+                                      </p>
+                                    </td>
                                   </tr>
                                 );
                               })}
                               <tr>
-                                <td className="payment digits">
-                                  <p className="itemtext digits">
-                                    {symbol}
-                                    {getCartTotal(cart)}
-                                  </p>
-                                </td>
+                                  <td colSpan="3" className="text-end">
+                                      <strong>Total:</strong>
+                                  </td>
+                                  <td className="payment digits">
+                                      <p className="itemtext digits">{symbol}{getCartTotal(cart)}</p>
+                                  </td>
                               </tr>
                             </tbody>
                           </Table>
@@ -180,27 +185,23 @@ class Invoice extends Component {
         </Container>
       </Fragment>
     );
-  }
-}
+})
 const PrintComponent = () => {
   const cart = useSelector((content) => content.cartSlice.cart);
   const symbol = useSelector((content) => content.productSlice.symbol);
-  const componentRef = useRef();
+  const contentRef = useRef(null);
+  const handlePrint = useReactToPrint({ contentRef });
+
   return (
     <Fragment>
-      <Breadcrumb parent="Apps / ECommerce" title="Invoice" />
-      <Invoice cart={cart} symbol={symbol} ref={componentRef} />
-      <Col sm="12" className="text-center pb-5">
-        {/* <ReactToPrint
-          trigger={() => (
-            <Button color="primary" className="me-2">
-              Print
-            </Button>
-          )}
-          content={() => componentRef.current}
-        /> */}
+      <Breadcrumb parent='Apps / ECommerce' title='Invoice' />
+      <Invoice cart={cart} symbol={symbol} ref={contentRef} />
+      <Col sm='12' className='text-center pb-5'>
+        <button className='btn btn-primary me-2' onClick={() => handlePrint()}>
+          {"Print"}
+        </button>
         <Link to={`${process.env.PUBLIC_URL}/ecommerce-app/product`}>
-          <Button color="secondary">Cancel</Button>
+          <Button color='secondary'>Cancel</Button>
         </Link>
       </Col>
     </Fragment>

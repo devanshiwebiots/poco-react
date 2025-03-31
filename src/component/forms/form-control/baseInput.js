@@ -14,8 +14,13 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import { useForm } from "react-hook-form";
+import CommonSelectDropdown from "../../common/MultipleFormOptions";
 
 const BaseInput = () => {
+  const { handleSubmit } = useForm();
+  const onSubmit = data => { };
+  const Options = ["1", "2", "3", "4", "5"];
   return (
     <Fragment>
       <Breadcrumb parent="Forms / Form Controls" title="Base inputs" />
@@ -26,7 +31,7 @@ const BaseInput = () => {
               <CardHeader>
                 <h5>Basic form control</h5>
               </CardHeader>
-              <Form className="form theme-form">
+              <Form className="form theme-form" onSubmit={handleSubmit(onSubmit)}>
                 <CardBody>
                   <Row>
                     <Col>
@@ -76,26 +81,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
-                      <FormGroup>
-                        <Label className="form-label" htmlFor="exampleFormControlSelect3">
-                          Example multiple select
-                        </Label>
-                        <Input
-                          type="select"
-                          name="select"
-                          className="form-control digits"
-                          multiple=""
-                          defaultValue="1"
-                        >
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control digits" />
                   </Row>
                   <Row>
                     <Col>
@@ -363,23 +349,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
-                      <FormGroup>
-                        <Label className="form-label">Example multiple select</Label>
-                        <Input
-                          type="select"
-                          name="select"
-                          className="form-control btn-pill digits"
-                          multiple=""
-                        >
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control btn-pill digits" />
                   </Row>
                   <Row>
                     <Col>
@@ -455,23 +425,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
-                      <FormGroup>
-                        <Label className="form-label">Example multiple select</Label>
-                        <Input
-                          type="select"
-                          name="select"
-                          className="form-control rounded-0 digits"
-                          multiple=""
-                        >
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control rounded-0 digits" />
                   </Row>
                   <Row>
                     <Col>
@@ -545,23 +499,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
-                      <FormGroup>
-                        <Label className="form-label">Example multiple select</Label>
-                        <Input
-                          type="select"
-                          name="select"
-                          className="form-control input-air-primary digits"
-                          multiple=""
-                        >
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control input-air-primary digits" />
                   </Row>
                   <Row>
                     <Col>
@@ -648,23 +586,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
-                      <FormGroup>
-                        <Label className="form-label">Example multiple select</Label>
-                        <Input
-                          type="select"
-                          name="select"
-                          className="form-control digits"
-                          multiple=""
-                        >
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </Input>
-                      </FormGroup>
-                    </Col>
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control digits" />
                   </Row>
                   <Row>
                     <Col>

@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 import { getCartTotal } from "../../../redux/service/index";
 import { XCircle } from "react-feather";
 import { ADD_TO_CART, DECREMENT_QTY, REMOVE_FROM_CART } from "../../../redux/cart/CartSlice";
-// import { ADD_TO_CART } from "../../../redux/actionType";
-// import { decrementQty, removeFromCart } from "../../../redux/product/action";
 const Cart = (props) => {
   const cart = useSelector((content) => content.cartSlice.cart);
   const symbol = useSelector((content) => content.productSlice.symbol);

@@ -42,11 +42,6 @@ const Chat = (props) => {
     fetchChatAsync();
   }, [dispatch, allMembers.length, chats.length]);
 
-  // useEffect(() => {
-  //   dispatch(fetchChatMembers());
-  //   dispatch(fetchChats());
-  // }, [dispatch]);
-
   const dynamicImage = (image) => {
     return images(`./${image}`);
   };

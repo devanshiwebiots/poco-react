@@ -1,85 +1,91 @@
 import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import {
   Col,
   Form,
   Label,
-  Input,
   InputGroup,
-  InputGroupText,
   Row,
+  Button,
+  FormFeedback,
 } from "reactstrap";
 const Tooltip = (props) => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const [validateClass, setValidateClass] = useState(false);
-  const onSubmit = (e, data) => {
-    e.preventDefault();
-    if (data !== '') {
-      alert('You submitted the form and stuff!');
-    } else {
-      errors.showMessages();
-    }
+  const [formKey, setFormKey] = useState(0);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitted },
+  } = useForm();
+  const onSubmit = (data) => {
+    toast.info("You submitted the form and stuff!");
+    reset();
+    setFormKey((prev) => prev + 1);
   };
 
-  const setClickFunc = () => {
-    setValidateClass(!validateClass)
-  }
+  const Options = [
+    { value: "", label: "Choose" },
+    { value: "us", label: "..." },
+  ];
 
   return (
     <Fragment>
-      <Form className={`needs-validation tooltip-validation ${validateClass ? 'validateClass' : ''}`} noValidate="" onSubmit={handleSubmit(onSubmit)}>
-        <Row className="g-3 dflex">
-          <Col md="4 mb-3">
-            <Label className="form-label">First Name</Label>
-            <input className="form-control" name="firstName" type="text" placeholder="First name" {...register('firstName', { required: true })} />
-            <span>{errors.firstName && 'First name is required'}</span>
-            <div className="valid-feedback">{'Looks good!'}</div>
+      <Form key={formKey} className={`needs-validation tooltip-validation`} noValidate='' onSubmit={handleSubmit(onSubmit)}>
+        <Row>
+          <Col md='4' className='position-relative mb-5'>
+            <Label>{"FirstName"}</Label>
+            <input type='text' className={`form-control ${errors.firstName ? "is-invalid" : ""} ${isSubmitted && !errors.firstName ? "is-valid" : ""}`} placeholder='Mark' {...register("firstName", { required: "Please enter your valid name" })} />
+            <FormFeedback tooltip valid>
+              {"Looks Good"}
+            </FormFeedback>
+            {errors.firstName && <FormFeedback tooltip>{errors.firstName.message}</FormFeedback>}
           </Col>
-          <Col md="4 mb-3">
-            <Label className="form-label">Last Name</Label>
-            <input className="form-control" name="lastName" type="text" placeholder="Last name" {...register('lastName', { required: true })} />
-            <span>{errors.lastName && 'Last name is required'}</span>
-            <div className="valid-feedback">{'Looks good!'}</div>
+          <Col md='4' className='position-relative mb-5'>
+            <Label>{"LastName"}</Label>
+            <input type='text' className={`form-control ${errors.lastName ? "is-invalid" : ""} ${isSubmitted && !errors.lastName ? "is-valid" : ""}`} placeholder='Otto' {...register("lastName", { required: "Please enter your valid name" })} />
+            <FormFeedback tooltip valid>
+              {"Looks Good"}
+            </FormFeedback>
+            {errors.lastName && <FormFeedback tooltip>{errors.lastName.message}</FormFeedback>}
           </Col>
-          <Col md="4 mb-3">
-            <Label className="form-label">User name</Label>
-            <InputGroup>
-              <InputGroupText className="w-auto">{'@'}</InputGroupText>
-              <input className="form-control" name="userName" type="text" placeholder="Username" aria-describedby="inputGroupPrepend" {...register('userName', { required: true })} />
-              <span>{errors.userName && 'User name is required'}</span>
-              <div className="invalid-feedback">{'Please choose a username.'}</div>
+          <Col md='4' className='position-relative mb-5'>
+            <Label>{"Username"}</Label>
+            <InputGroup className='has-validation'>
+              <div className='input-group-prepend'>
+                <span className='input-group-text' id='inputGroupPrepend'>
+                  @
+                </span>
+              </div>
+              <input type='text' className={`form-control ${errors.username ? "is-invalid" : ""} ${isSubmitted && !errors.username ? "is-valid" : ""}`} placeholder='Otto' {...register("username", { required: "Please choose a unique and valid username." })} />
+              {errors.username && <FormFeedback tooltip>{errors.username.message}</FormFeedback>}
             </InputGroup>
           </Col>
+          <Col md='6' className='position-relative mb-5'>
+            <Label>{"City"}</Label>
+            <input type='text' className={`form-control ${errors.city ? "is-invalid" : ""} ${isSubmitted && !errors.city ? "is-valid" : ""}`} {...register("city", { required: "Please provide a valid city" })} />
+            {errors.city && <FormFeedback tooltip>{errors.city.message}</FormFeedback>}
+          </Col>
+          <Col md='3' className='position-relative mb-5'>
+            <Label>{"State"}</Label>
+            <select className={`form-select ${errors.state ? "is-invalid" : ""} ${isSubmitted && !errors.state ? "is-valid" : ""}`} {...register("state", { required: "Please provide a valid state" })}>
+              {Options.map((item, index) => (
+                <option value={item.value} key={index}>
+                  {item.label}
+                </option>
+              ))}
+            </select>
+            {errors.state && <FormFeedback tooltip>{errors.state.message}</FormFeedback>}
+          </Col>
+          <Col md='3' className='position-relative mb-5'>
+            <Label>{"Zip"}</Label>
+            <input type='text' className={`form-control ${errors.zip ? "is-invalid" : ""} ${isSubmitted && !errors.zip ? "is-valid" : ""}`} {...register("zip", { required: "Please provide a valid zip" })} />
+            {errors.zip && <FormFeedback tooltip>{errors.zip.message}</FormFeedback>}
+          </Col>
+          <Col xs='12'>
+            <Button color='primary'>{"Submit Form"}</Button>
+          </Col>
         </Row>
-        <Row className='g-3 dflex'>
-          <Col md="6 mb-3">
-            <Label className="form-label">City</Label>
-            <input className="form-control" name="city" type="text" placeholder="City" {...register('city', { required: true })} />
-            <span>{errors.city && 'Please provide a valid city'}</span>
-            <div className="invalid-feedback">{'Please provide a valid city.'}</div>
-          </Col>
-          <Col md="3 mb-3">
-            <Label className="form-label">State</Label>
-            <input className="form-control" name="state" type="text" placeholder="State" {...register('state', { required: true })} />
-            <span>{errors.state && 'Please provide a valid state.'}</span>
-            <div className="invalid-feedback">{'Please provide a valid state.'}</div>
-          </Col>
-          <Col md="3 mb-3">
-            <Label className="form-label">Zip</Label>
-            <input className="form-control" name="zip" type="text" placeholder="Zip" {...register('zip', { required: true })} />
-            <span>{errors.zip && 'Please provide a valid zip.'}</span>
-            <div className="invalid-feedback">{'Please provide a valid zip.'}</div>
-          </Col>
-        </Row>
-        <div className="mb-3">
-          <div className="form-check">
-            <div className="checkbox p-0">
-              <Input className="form-check-input" id="invalidCheck3" type="checkbox" />
-              <Label className="form-label" htmlFor="invalidCheck3">{'Agree to terms and conditions'}</Label>
-            </div>
-          </div>
-        </div>
-        <button className="btn btn-primary" type='submit' onClick={setClickFunc}>Submit Form</button>
       </Form>
     </Fragment>
   );

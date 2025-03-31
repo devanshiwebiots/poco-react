@@ -101,22 +101,22 @@ const Wishlist = (props) => {
         </Container>
       ) : (
          <section className="cart-section section-b-space">
-                 <Container fluid={true}>
-                   <Row>
-                     <Col sm="12">
-                       <div>
-                         <Col sm="12" className="empty-cart-cls text-center">
-                           <img src="" className="img-fluid mb-4" alt="" />
-                           <h3>
-                             <strong>Your Wishlist is Empty</strong>
-                           </h3>
-                           <h4>Explore more shortlist some items.</h4>
-                         </Col>
-                       </div>
-                     </Col>
-                   </Row>
-                 </Container>
-               </section>
+            <Container fluid={true}>
+              <Row>
+                <Col sm="12">
+                  <div>
+                    <Col sm="12" className="empty-cart-cls text-center">
+                      <img src="" className="img-fluid mb-4" alt="" />
+                      <h3>
+                        <strong>Your Wishlist is Empty</strong>
+                      </h3>
+                      <h4>Explore more shortlist some items.</h4>
+                    </Col>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+         </section>
       )}
     </Fragment>
   );

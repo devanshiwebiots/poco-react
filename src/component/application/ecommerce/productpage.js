@@ -8,7 +8,6 @@ import Slider from "react-slick";
 import { useSelector, useDispatch } from "react-redux";
 import { ADD_TO_CART } from "../../../redux/cart/CartSlice";
 import { GET_SINGLE_ITEM } from "../../../redux/product/ProductSlice";
-// import { addToCart, getSingleItem } from "../../../redux/product/action";
 
 const Productpage = () => {
   const history = useNavigate();

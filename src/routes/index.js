@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import AppLayout from "../App";
 import configDB from "../data/customizer/config";
 import PrivateRoute from "./private-route";
 import Signin from "../auth/signin";
@@ -28,8 +27,6 @@ const MainRoutes = () => {
     const color = localStorage.getItem("color");
     const layout = localStorage.getItem("layout_version") || configDB.data.color.layout_version;
     document.body.classList.add(layout);
-    console.ignoredYellowBox = ["Warning: Each", "Warning: Failed"];
-    console.disableYellowBox = true;
     document.getElementById("color").setAttribute("href", `${process.env.PUBLIC_URL}/assets/css/${color}.css`);
 
     return function cleanup() {
@@ -41,7 +38,7 @@ const MainRoutes = () => {
     <>
       <Routes>
         <Route exact path="/" element={<PrivateRoute />}>
-          {/* {currentUser !== null ? <Route exact path={`${process.env.PUBLIC_URL}`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/default`} />} /> : ""} */}
+          {currentUser !== null ? <Route exact path={`${process.env.PUBLIC_URL}`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/default`} />} /> : ""}
           <Route element={<Layout />}>
             <Route exact path={`${process.env.PUBLIC_URL}/dashboard/default`} element={<Default />} />
           </Route>

@@ -1,19 +1,19 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Signin from "./auth/signin";
-import Error400 from "./pages/errors/error400";
-import Error404 from "./pages/errors/error404";
-import Error500 from "./pages/errors/error500";
+import Signin from "../auth/signin";
+import Error400 from "../pages/errors/error400";
+import Error404 from "../pages/errors/error404";
+import Error500 from "../pages/errors/error500";
 
-import Maintenance from "./pages/maintenance";
+import Maintenance from "../pages/maintenance";
 
-import Login from "./pages/authentication/login";
-import Register from "./pages/authentication/register";
-import Forgetpwd from "./pages/authentication/forgetpwd";
+import Login from "../pages/authentication/login";
+import Register from "../pages/authentication/register";
+import Forgetpwd from "../pages/authentication/forgetpwd";
 
-import Comingsoon from "./pages/comingSoon/comingsoon";
-import ComingsoonVideo from "./pages/comingSoon/comingsoonVideo";
-import ComingsoonImg from "./pages/comingSoon/comingsoonImg";
+import Comingsoon from "../pages/comingSoon/comingsoon";
+import ComingsoonVideo from "../pages/comingSoon/comingsoonVideo";
+import ComingsoonImg from "../pages/comingSoon/comingsoonImg";
 
 const AuthRoutes = () => {
     return (

@@ -42,7 +42,6 @@ const Sidebar = () => {
     return size;
   };
 
-  // // eslint-disable-next-line
   const [width, height] = useWindowSize(sidebar_type);
 
   useEffect(() => {

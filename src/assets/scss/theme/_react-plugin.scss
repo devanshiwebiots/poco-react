@@ -82,32 +82,40 @@ body.offcanvas{
 }
 // dropzone
 .dzu-dropzone {
-  border: 2px dashed $primary-color !important;
+  border: 2px dashed var(--theme-default) !important;
   background: rgba($primary-color, 0.2);
   overflow: auto !important;
-  .dz-message {
-    .note {
-      background-color: $transparent-color;
-    }
+  .dzu-inputLabel {
+      padding: 0 14px;
   }
-}
-.dzu-inputLabel {
-  color: $primary-color !important;
+  .dzu-previewImage {
+      max-height: 54px;
+  }
+  .dz-message {
+      .note {
+      background-color: $transparent-color;
+      }
+  }
+  }
+  .dzu-inputLabel {
+  color: var(--theme-default) !important;
   text-align: center;
   margin-bottom: 0;
-}
-.dzu-previewContainer {
+  font-family: $font-roboto;
+  }
+  .dzu-previewContainer {
   padding: 30px !important;
-}
-.dzu-inputLabelWithFiles {
+  border-bottom: unset;
+  }
+  .dzu-inputLabelWithFiles {
   margin-left: 30px !important;
-  background-color: $primary-color !important;
+  background-color: var(--theme-default) !important;
   color: $white !important;
-}
-.dzu-submitButton {
-  background-color: $primary-color !important;
+  }
+  .dzu-submitButton {
+  background-color: var(--theme-default) !important;
   &:disabled {
-    background-color: #e6e6e6 !important;
+      background-color: #e6e6e6 !important;
   }
 }
 // Image Cropper

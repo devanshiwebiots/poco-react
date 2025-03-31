@@ -1,63 +1,69 @@
 import React, { useState } from "react";
-import {Dropdown,DropdownMenu, DropdownItem,Button,ButtonGroup } from 'reactstrap';
-const ColorDropdown = props => {
-  const {Buttonitem} = props;
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen(prevState => !prevState);
-  return (
-    <>
-     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-        <div className="btn-group mb-0">
-        <Button className="dropbtn" color={Buttonitem.btncolor} >Action <span><i className="icofont icofont-arrow-down"></i></span></Button>
-        <DropdownMenu className="dropdown-content">
-            <DropdownItem href="#">{Buttonitem.item1}</DropdownItem>
-            <DropdownItem href="#">{Buttonitem.item2}</DropdownItem>
-            <DropdownItem href="#">{Buttonitem.item3}</DropdownItem>
-            <DropdownItem divider/>
-            <DropdownItem href="#">{Buttonitem.item4}</DropdownItem>
-        </DropdownMenu>
-        </div>
-    </Dropdown>
-    </>
-  );
-};
-
-const SplitDropdown = props => {
-    const {Splititem} = props;
-     return (
+import {Dropdown,DropdownMenu, DropdownItem,Button,ButtonGroup, DropdownToggle } from 'reactstrap';
+  const ColorDropdown = props => {
+    const {Buttonitem} = props;
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    return (
       <>
-      <div className="btn-group">
-        <Button color={Splititem.btncolor}>Primary Button</Button>
-        <Dropdown className="separated-btn">
-        <Button color={Splititem.btncolor}><i className="icofont icofont-arrow-down"></i></Button>
-        <DropdownMenu className="dropdown-content digits">
-            <DropdownItem href="#">{Splititem.item}</DropdownItem>
-            <DropdownItem href="#">{Splititem.item}</DropdownItem>
-            <DropdownItem href="#">{Splititem.item}</DropdownItem>
-        </DropdownMenu>
-        </Dropdown>
-     </div>
+      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+          <div className="btn-group mb-0">
+          <Button className="dropbtn" color={Buttonitem.btncolor} >Action <span><i className="icofont icofont-arrow-down"></i></span></Button>
+          <DropdownMenu className="dropdown-content">
+              <DropdownItem href="#">{Buttonitem.item1}</DropdownItem>
+              <DropdownItem href="#">{Buttonitem.item2}</DropdownItem>
+              <DropdownItem href="#">{Buttonitem.item3}</DropdownItem>
+              <DropdownItem divider/>
+              <DropdownItem href="#">{Buttonitem.item4}</DropdownItem>
+          </DropdownMenu>
+          </div>
+      </Dropdown>
       </>
     );
   };
 
-  const RoundedDropdown = props => {
-    const {roundeditem} = props;
+  const SplitDropdown = ({ Splititem }) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+
     return (
-      <>
-       <Dropdown>
-            <ButtonGroup className="mb-0">
-            <Button className="dropbtn btn-round" color={roundeditem.btncolor}>{roundeditem.btntext} <span><i className="icofont icofont-arrow-down"></i></span></Button>
-            <DropdownMenu className="dropdown-content">
+      <div className="btn-group">
+        <Button color={Splititem.btncolor}>Primary Button</Button>
+        <Dropdown isOpen={dropdownOpen} toggle={toggle} className="separated-btn">
+          <DropdownToggle color={Splititem.btncolor}>
+            <i className="icofont icofont-arrow-down"></i>
+          </DropdownToggle>
+          <DropdownMenu className="dropdown-content digits">
+            <DropdownItem href="#">{Splititem.item}</DropdownItem>
+            <DropdownItem href="#">{Splititem.item}</DropdownItem>
+            <DropdownItem href="#">{Splititem.item}</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </div>
+    );
+  };
+
+  const RoundedDropdown = ({ roundeditem }) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+  
+    const toggle = () => setDropdownOpen(prev => !prev);
+  
+    return (
+      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+        <ButtonGroup className="mb-0">
+          <DropdownToggle className="dropbtn btn-round" color={roundeditem.btncolor} caret>
+            {roundeditem.btntext} <i className="icofont icofont-arrow-down"></i>
+          </DropdownToggle>
+          <DropdownMenu className="dropdown-content">
             <DropdownItem href="#">{roundeditem.item1}</DropdownItem>
             <DropdownItem href="#">{roundeditem.item2}</DropdownItem>
             <DropdownItem href="#">{roundeditem.item3}</DropdownItem>
-            <DropdownItem divider/>
+            <DropdownItem divider />
             <DropdownItem href="#">{roundeditem.item4}</DropdownItem>
-            </DropdownMenu>
-            </ButtonGroup>
-        </Dropdown>
-      </>
+          </DropdownMenu>
+        </ButtonGroup>
+      </Dropdown>
     );
   };
 

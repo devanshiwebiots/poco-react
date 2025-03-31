@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Breadcrumb from '../../common/breadcrumb/breadcrumb'
-import {Container,Row,Col,Card,CardBody,CardHeader,Dropdown,DropdownMenu, DropdownItem,Button } from 'reactstrap';
+import {Container,Row,Col,Card,CardBody,CardHeader, DropdownMenu, DropdownItem,Button, UncontrolledDropdown } from 'reactstrap';
 import  {DropDownButtonColor,DropDownSplit,DropDownRounded} from './dropdownComponent'
 const Dropdowns = (props) => {
     return (
@@ -15,14 +15,14 @@ const Dropdowns = (props) => {
                   </CardHeader>
                   <CardBody>
                     <div className="dropdown-basic">
-                      <Dropdown>
+                      <UncontrolledDropdown>
                         <Button color="primary" className="dropbtn">Dropdown Button <span><i className="icofont icofont-arrow-down"></i></span></Button>
                         <DropdownMenu className="dropdown-content">
                             <DropdownItem href="#">Action</DropdownItem>
                             <DropdownItem href="#">Another Action</DropdownItem>
                             <DropdownItem href="#">Something Else Here</DropdownItem>
                         </DropdownMenu>
-                    </Dropdown>
+                    </UncontrolledDropdown>
                  </div>
                   </CardBody>
                 </Card>
@@ -70,7 +70,7 @@ const Dropdowns = (props) => {
                   </CardHeader>
                   <CardBody>
                     <div className="dropdown-basic">
-                      <Dropdown>
+                      <UncontrolledDropdown>
                         <Button color="primary" className="dropbtn" >Dropdown Button <span><i className="icofont icofont-arrow-down"></i></span></Button>
                         <DropdownMenu className="dropdown-content">
                             <DropdownItem href="#">Link 1</DropdownItem>
@@ -79,7 +79,7 @@ const Dropdowns = (props) => {
                             <DropdownItem divider/>
                             <DropdownItem href="#">Another Link</DropdownItem>
                         </DropdownMenu>
-                      </Dropdown>
+                      </UncontrolledDropdown>
                     </div>
                   </CardBody>
                 </Card>
@@ -91,7 +91,7 @@ const Dropdowns = (props) => {
                   </CardHeader>
                   <CardBody>
                     <div className="dropdown-basic">
-                      <Dropdown>
+                      <UncontrolledDropdown>
                         <Button color="primary" className="dropbtn" >Dropdown Button <span><i className="icofont icofont-arrow-down"></i></span></Button>
                         <DropdownMenu className="dropdown-content">
                             <DropdownItem header>Dropdown header</DropdownItem>
@@ -100,7 +100,7 @@ const Dropdowns = (props) => {
                             <DropdownItem header>Dropdown header</DropdownItem>
                             <DropdownItem href="#">Another Link</DropdownItem>
                         </DropdownMenu>
-                      </Dropdown>
+                      </UncontrolledDropdown>
                     </div>
                   </CardBody>
                 </Card>
@@ -112,14 +112,14 @@ const Dropdowns = (props) => {
                   </CardHeader>
                   <CardBody>
                     <div className="dropup-basic">
-                      <Dropdown className="dropup">
+                      <UncontrolledDropdown className="dropup">
                         <Button color="primary" className="dropbtn" >Dropdown Button <span><i className="icofont icofont-arrow-up"></i></span></Button>
                         <DropdownMenu className="dropup-content">
                           <DropdownItem href="#">Normal</DropdownItem>
                           <DropdownItem href="#" active>Active</DropdownItem>
                           <DropdownItem href="#" disabled>Disabled</DropdownItem>
                       </DropdownMenu>
-                      </Dropdown>
+                      </UncontrolledDropdown>
                     </div>
                   </CardBody>
                 </Card>
@@ -131,13 +131,13 @@ const Dropdowns = (props) => {
                   </CardHeader>
                   <CardBody>
                     <div className="dropup-basic">
-                      <Dropdown className="dropup">
+                      <UncontrolledDropdown className="dropup">
                         <Button color="primary" className="dropbtn" >Dropdown Button <span><i className="icofont icofont-arrow-up"></i></span></Button>
                         <DropdownMenu className="dropup-content">
                             <DropdownItem href="#">Link 1</DropdownItem>
                             <DropdownItem href="#">Link 2</DropdownItem>
                       </DropdownMenu>
-                      </Dropdown>
+                      </UncontrolledDropdown>
                     </div>
                   </CardBody>
                 </Card>

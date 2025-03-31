@@ -29,7 +29,7 @@ import AccordionsComponent from "../component/ui-element/accordion/accordion";
 
 import Lists from "../component/ui-element/lists";
 import Scrollable from "../component/ui-element/scrollable";
-import Boostrapnotify from "../component/ui-element/boostrapnotify";
+import BoostrapNotify from "../component/ui-element/boostrapnotify";
 import Ratings from "../component/ui-element/ratings";
 import Draganddrop from "../component/ui-element/draganddrop";
 import Dropzone from "../component/ui-element/dropzone";
@@ -141,7 +141,7 @@ import SocialApp from "../component/appnew/social-app/socialApp";
 // Editors
 import CkEditor from "../component/appnew/editor/CkEditor";
 import MdeEditor from "../component/appnew/editor/MdeEditor";
-import AceCodeEditor from "../component/appnew/editor/AceCodeEditor";
+import AceCodeEditor from "../component/appnew/editor/aceCodeEditor";
 
 // FAQ
 import FaqComponent from "../component/appnew/others/faqComponent";
@@ -165,11 +165,6 @@ import EmailApp from "../component/appnew/email-app/emailDefault";
 
 // Chat app
 import ChatApp from "../component/appnew/chat-app/chat";
-
-// Contact app
-import Contactlist from "../component/appnew/contact-app/contactapp";
-import Newuser from "../component/appnew/contact-app/new-user";
-import Edituser from "../component/appnew/contact-app/edit-user";
 
 import Samplepage from "../pages/samplepage";
 import Supportticket from "../pages/supportticket";
@@ -268,7 +263,7 @@ export const routes = [
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/bootstrap-notify`,
-    element: <Boostrapnotify />,
+    element: <BoostrapNotify />,
   },
   {
     path: `${process.env.PUBLIC_URL}/ui-element/rating`,
@@ -593,19 +588,6 @@ export const routes = [
   },
 
   { path: `${process.env.PUBLIC_URL}/appnew/chat-app`, element: <ChatApp /> },
-
-  {
-    path: `${process.env.PUBLIC_URL}/appnew/contact-app`,
-    element: <Contactlist />,
-  },
-  {
-    path: `${process.env.PUBLIC_URL}/appnew/new-contact`,
-    element: <Newuser />,
-  },
-  {
-    path: `${process.env.PUBLIC_URL}/appnew/edit-contact/:id`,
-    element: <Edituser />,
-  },
 
   {
     path: `${process.env.PUBLIC_URL}/calender/basic`,

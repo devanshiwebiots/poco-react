@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Range, getTrackBackground } from "react-range";
 import { getBrands, getColors } from "../../../../redux/service/index";
-// import { filterBrand, filterColor, filterPrice } from "../../../../redux/filter/action";
 import { useDispatch, useSelector } from "react-redux";
 import { FILTER_BRAND, FILTER_COLOR, FILTER_PRICE } from "../../../../redux/filter/FilterSlice";
 
