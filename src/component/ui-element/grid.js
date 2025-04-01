@@ -13,7 +13,7 @@ const Grid = (props) => {
   return (
     <div>
       <Breadcrumb parent="Ui Elements" title="Grid" />
-      <Container fluid={true}>
+      <Container fluid={true} className="grid-page">
         <Row>
           <Col sm="12">
             <Card>

@@ -30,7 +30,7 @@ function Navs(props) {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Navs" />
-      <Container fluid={true}>
+      <Container fluid={true} className="nav-page">
         <Row>
           <Col md="6">
             <Card className="height-equal">

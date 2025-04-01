@@ -5,7 +5,7 @@ const Ribbons = (props) => {
   return (
     <div>
       <Breadcrumb parent="Ui Elements" title="Ribbons" />
-      <Container fluid={true}>
+      <Container fluid={true} className="ribbons-page">
         <Row>
           <Col sm="12" xl="12">
             <Card>

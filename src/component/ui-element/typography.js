@@ -18,7 +18,7 @@ const Typography = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Typography" />
-      <Container fluid={true}>
+      <Container fluid={true} className="typography-page">
         <Row>
           <Col sm="12">
             <Card>
@@ -425,7 +425,7 @@ const Typography = (props) => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer posuere erat a ante.
                   </p>
-                  <footer className="blockquote-footer py-0">
+                  <footer className="blockquote-footer">
                     Someone famous in
                     <cite title="Source Title">Source Title</cite>
                   </footer>
@@ -436,7 +436,7 @@ const Typography = (props) => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer posuere erat a ante.
                   </p>
-                  <footer className="blockquote-footer py-0">
+                  <footer className="blockquote-footer">
                     Someone famous in
                     <cite title="Source Title">Source Title</cite>
                   </footer>
@@ -447,7 +447,7 @@ const Typography = (props) => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Integer posuere erat a ante.
                   </p>
-                  <footer className="blockquote-footer py-0">
+                  <footer className="blockquote-footer">
                     Someone famous in
                     <cite title="Source Title">Source Title</cite>
                   </footer>

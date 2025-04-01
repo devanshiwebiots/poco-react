@@ -28,7 +28,7 @@ const Tagandpills = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Tag & Pills" />
-      <Container fluid={true}>
+      <Container fluid={true} className="tag-pills-page">
         <Row>
           <Col md="6" lg="12" xl="6">
             <Card>
