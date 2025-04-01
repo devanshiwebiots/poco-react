@@ -1,9 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import c1 from "../../../assets/images/Carousel/1.jpg";
-import c2 from "../../../assets/images/Carousel/2.jpg";
-import c3 from "../../../assets/images/Carousel/3.jpg";
+import c1 from "../../../assets/images/slider/1.jpg";
+import c2 from "../../../assets/images/slider/2.jpg";
+import c3 from "../../../assets/images/slider/3.jpg";
 
 const items = [
   {

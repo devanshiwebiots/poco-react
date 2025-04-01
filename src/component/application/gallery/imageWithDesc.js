@@ -16,11 +16,11 @@ const ImageWithDesc = () => {
                 <h5>IMAGE GALLERY WITH DESCRIPTION</h5>
               </CardHeader>
               <CardBody>
-                <Gallery>
+                <Gallery withCaption>
                   <div className="my-gallery row gallery-with-description">
                     {smallImages.map((smallImg, index) => (
                       <figure className="col-xl-3 col-sm-6" key={index}>
-                        <Item original={images[index]} thumbnail={smallImg} width="1600" height="950">
+                        <Item original={images[index]} thumbnail={smallImg} width="1600" height="800" caption="Lorem Ipsum is simply dummy text of the printing and typesetting industry.">
                           {({ ref, open }) => (
                             <>
                               <img ref={ref} src={smallImg} alt={`Gallery-${index}`} className="img-thumbnail" onClick={open} />
