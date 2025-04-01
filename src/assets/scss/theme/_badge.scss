@@ -37,6 +37,12 @@
     align-items: center;
     span{
       margin-left: 6px;
+      padding: 0;
+      height: 26px;
+      width: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   .badge{ 

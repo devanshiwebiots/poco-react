@@ -206,7 +206,18 @@ $alert-color: $primary-color, $secondary-color, $success-color, $danger-color,
   border-width: 2px;
   padding: 11px 1.25rem;
 }
-
+.alert-page{
+  .dismiss-text{
+    .alert {
+      .btn-close{
+        span{
+          padding: 3px 7px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
 /**=====================
      13. Alert CSS end
 ==========================**/

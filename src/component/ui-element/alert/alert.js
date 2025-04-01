@@ -7,7 +7,7 @@ const Alerts = (props) => {
   return (
     <div>
       <Breadcrumb parent="Ui Elements" title="Alert" />
-      <Container fluid={true}>
+      <Container fluid={true} className="alert-page">
         <Row>
           <Col sm="12" xl="6">
             <Card>
