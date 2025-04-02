@@ -24,14 +24,15 @@ const MesonryGallery = () => {
               </CardHeader>
               <CardBody className='photoswipe-pb-responsive'>
                 <Gallery>
-                  <Masonry breakpointCols={breakpointColumnsObj} className='my-gallery row grid gallery' columnClassName='col-md-3 col-6 grid-item'>
+                  <Masonry breakpointCols={breakpointColumnsObj} className='my-gallery row grid gallery' columnClassName='col-md-3 col-sm-6 grid-item'>
                     {data.map((element, index) => (
-                      <Item
-                            original={element.src}
-                            thumbnail={element.src}
-                            width="1024"
-                            height="900"
-                          >
+                      <div>
+                        <Item
+                              original={element.src}
+                              thumbnail={element.src}
+                              width="1024"
+                              height="900"
+                            >
                             {({ ref, open }) => (
                               <img
                                 ref={ref}
@@ -41,7 +42,8 @@ const MesonryGallery = () => {
                                 alt=''
                               />
                             )}
-                          </Item>
+                        </Item>
+                      </div>
                     ))}
                   </Masonry>
                 </Gallery>

@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Breadcrumb from "../../common/breadcrumb/breadcrumb";
 import Masonry from "react-masonry-css";
 import { data } from "../../../data/galleryData";
-import { Container, Row, Col, Card, CardHeader, CardBody } from "reactstrap";
+import { Container, Row, Col, Card, CardHeader, CardBody, Media } from "reactstrap";
 import { Gallery, Item } from "react-photoswipe-gallery";
 const MesonryDesc = () => {
   const breakpointColumnsObj = {
@@ -23,17 +23,30 @@ const MesonryDesc = () => {
               </CardHeader>
               <CardBody>
                 <Gallery withCaption>
-                  <Masonry breakpointCols={breakpointColumnsObj} className='my-gallery row grid gallery-with-description masonary-desc' columnClassName='grid-item col-xl-3 col-sm-6'>
+                  <Masonry
+                    breakpointCols={breakpointColumnsObj}
+                    className="my-gallery row grid gallery-with-description masonary-desc"
+                    columnClassName="grid-item col-xl-3 col-sm-6"
+                  >
                     {data.map((element, index) => (
-                      <Item original={element.src} thumbnail={element.src} width='1024' height='800' caption="is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.">
+                      <Item
+                        key={index}
+                        original={element.src}
+                        thumbnail={element.src}
+                        width="1600"
+                        height="800"
+                        caption="is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."
+                      >
                         {({ ref, open }) => (
-                          <div ref={ref} onClick={open}>
-                            <img src={element.src} style={{ width: "100%" }} alt='' />
-                            <div className='caption'>
-                              <h4>{"Portfolio Title"}</h4>
-                              <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
-                            </div>
-                          </div>
+                          <li style={{ listStyle: "none" }} ref={ref}>
+                            <a href="#javascript" onClick={open}>
+                              <Media src={element.src} style={{ width: "100%" }} alt="" />
+                              <div className="caption">
+                                <h4>Portfolio Title</h4>
+                                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+                              </div>
+                            </a>
+                          </li>
                         )}
                       </Item>
                     ))}
