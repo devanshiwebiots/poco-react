@@ -3,6 +3,21 @@
 ==========================**/
 //Dark layout
 body {
+  .swiper-button-prev, .swiper-button-next{
+    color: $primary-color;
+    &::after{
+      font-size: 28px;
+    }
+  }
+  .swiper-pagination{
+    .swiper-pagination-bullet{
+      background-color: $primary-color;
+      opacity: 0.5;
+      &.swiper-pagination-bullet-active{
+        opacity: 1;
+      }
+    }
+  }
   &.light-only {
     .page-wrapper {
       .page-body-wrapper {
@@ -18,6 +33,156 @@ body {
     background-color: $dark-body-background;
     .cke_chrome {
       border: 1px solid $dark-border-color;
+    }
+    .table > :not(caption) > * > *{
+      background-color: $transparent-color;
+    }
+    .weather-widget{
+      .weather-widget-bottom{
+        .col-auto{
+          .box{
+            h5,.h5,h6,.h6{
+              color: $dark-all-font-color;
+            }
+          }
+        }
+      }
+    }
+    .react-calendar__month-view__weekdays{
+      color: $dark-all-font-color;
+    }
+    .small-chart{
+      .card-body{
+        h4,span{
+          color: $dark-all-font-color;
+        }
+      }
+    }
+    .apexcharts-legend-text{
+      color: $dark-all-font-color !important;
+    }
+    .typography-page{
+      h1,h2,h3,h4,h5,h6,p,li,dt,dd{
+        color: $dark-all-font-color !important;
+      }
+    }
+    .grid-page{
+      p,span{
+        color: $dark-all-font-color;
+      }
+    }
+    .tag-pills-page{
+      h1,h2,h3,h4,h5,h6{
+        color: $dark-all-font-color;
+      }
+    }
+    .modal-page{
+      h5,p{
+        color: $dark-all-font-color;
+      }
+    }
+    .modal{
+      .modal-header{
+        .btn-close{
+          filter: invert(1);
+          font-size: 16px;
+        }
+      }
+      .modal-body{
+        .form-control{
+          background-color: $dark-body-background;
+          color: $dark-all-font-color;
+        }
+      }
+    }
+    .grid-showcase{
+      span{
+        background-color: $transparent-color;
+        border-color: $dark-border-color;
+      }
+    }
+    .alert-page{
+      .alert-dismissible{
+        .btn-close{
+          color: $dark-all-font-color !important;
+        }
+      }
+    }
+    .popover{
+      border-color: $dark-border-color;
+      .popover-inner{
+        .popover-header,.popover-body{
+          background-color: $dark-body-background;
+          color: $dark-all-font-color;
+        }
+        .popover-header{
+          border-bottom-color: $dark-border-color;
+        }
+      }
+    }
+    .sub-title{
+      color: $dark-all-font-color;
+    }
+    .tab-bootstrap,.tab-line{
+      .tab-content{
+        .tab-pane{
+          p{
+            color: $dark-all-font-color;
+          }
+        }
+      }
+    }
+    .nav-page{
+      h5{
+        color: $dark-all-font-color;
+      }
+    }
+    .rating-page{
+      h6{
+        color: $dark-all-font-color;
+      }
+    }
+    .dropzone-container {
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15), -2px -2px 8px rgba(255, 255, 255, 0.1);
+      h5,.h5{
+        color: $dark-all-font-color;
+      }
+    }
+    .file-card{
+      background: $dark-body-background;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15), -2px -2px 8px rgba(255, 255, 255, 0.1);
+      border-color: $dark-border-color;
+      .file-name,.file-size{
+        color: $dark-all-font-color;
+      }
+      &:hover{
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15), -2px -2px 8px rgba(255, 255, 255, 0.1);
+      }
+    }
+    .user-profile {
+      .like-comment {
+        span,label{
+          color: $dark-all-font-color;
+        }
+      }
+    }
+    .ribbons-page{
+      p{
+        color: $dark-all-font-color;
+      }
+    }
+    .breadcrumb{
+      li{
+        &.breadcrumb-item{
+          color: $dark-all-font-color;
+        }
+        &::before{
+          color: $dark-all-font-color;
+        }
+        &.active{
+          color: $dark-all-font-color;
+        }
+      }
     }
     .loader-wrapper {
       .typewriter {
@@ -794,7 +959,7 @@ body {
     .crypto-graph-card {
       .media {
         .bitcoin-graph-content {
-          span {
+          span,h5 {
             color: $dark-all-font-color;
           }
         }
@@ -1805,7 +1970,7 @@ body {
               tbody {
                 tr {
                   &:nth-of-type(odd) {
-                    background-color: rgba(0, 0, 0, 0.05);
+                    background-color: rgba(0, 0, 0, 0.05) !important;
                     &:hover {
                       th,
                       td {
@@ -1885,10 +2050,12 @@ body {
               }
             }
             .btn-outline-light,
-            .btn-outline-dark {
+            .btn-outline-dark,
+            .btn-outline-light-2x {
               color: $white !important;
             }
-            .btn-outline-light {
+            .btn-outline-light,
+            .btn-outline-light-2x {
               &:hover {
                 color: $black !important;
               }
@@ -2534,7 +2701,7 @@ body {
                   color: $dark-all-font-color;
                 }
               }
-              span {
+              span,p {
                 color: $dark-small-font-color;
               }
             }
@@ -2626,9 +2793,15 @@ body {
           }
           .widget-joins {
             .media {
+              h6{
+                color: $dark-all-font-color;
+              }
               .media-body {
                 > span {
                   color: $dark-small-font-color;
+                }
+                h4{
+                  color: $dark-all-font-color;
                 }
               }
               .details {
@@ -2734,7 +2907,6 @@ body {
           p {
             color: $dark-all-font-color;
           }
-          border-top: 1px solid $dark-body-background;
           background-color: $dark-card-background;
           background-image: none;
         }

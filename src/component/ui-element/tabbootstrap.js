@@ -38,7 +38,7 @@ const Tabbootstrap = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Bootstrap Tabs" />
-      <Container fluid={true}>
+      <Container fluid={true} className="tab-bootstrap">
         <Row>
           <Col sm="12" xl="6 xl-100 box-col-12">
             <Card>

@@ -45,7 +45,7 @@ const Modals = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Modal" />
-      <Container fluid={true}>
+      <Container fluid={true} className="modal-page">
         <Row>
           <Col sm="12">
             <Card>
@@ -58,9 +58,6 @@ const Modals = (props) => {
                     <div className="modal-content">
                       <ModalHeader style={{ display: "inline" }}>
                         New message
-                        <button className="btn-close invisible" type="button">
-                          <span aria-hidden="true" className="visible">×</span>
-                        </button>
                       </ModalHeader>
 
                       <ModalBody>
@@ -101,9 +98,6 @@ const Modals = (props) => {
                   </Button>
                   <Modal isOpen={modal} toggle={toggle}>
                     <ModalHeader toggle={toggle}>Modal title
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={toggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>....</ModalBody>
                     <ModalFooter>
@@ -121,9 +115,6 @@ const Modals = (props) => {
                   <Modal isOpen={scrollingmodal} toggle={Scrollmodaltoggle}>
                     <ModalHeader toggle={Scrollmodaltoggle}>
                       Modal title
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={Scrollmodaltoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>
                       <p>
@@ -248,9 +239,6 @@ const Modals = (props) => {
                   >
                     <ModalHeader toggle={Verticalcentermodaltoggle}>
                       Modal title
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={Verticalcentermodaltoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>
                       <p>
@@ -282,9 +270,6 @@ const Modals = (props) => {
                   >
                     <ModalHeader toggle={Tooltippopovermodaltoggle}>
                       Modal title
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={Tooltippopovermodaltoggle}>×</span>
-                      </button>
                     </ModalHeader>
 
                     <ModalBody>
@@ -326,9 +311,6 @@ const Modals = (props) => {
                   <Modal isOpen={grid} toggle={Gridmodaltoggle}>
                     <ModalHeader toggle={Gridmodaltoggle}>
                       Modal title
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={Gridmodaltoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody className="grid-showcase">
                       <Container fluid={true} className="bd-example-row">
@@ -403,9 +385,6 @@ const Modals = (props) => {
                   >
                     <ModalHeader toggle={VaryingContentonetoggle}>
                       New message
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={VaryingContentonetoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>
                       <Form>
@@ -446,9 +425,6 @@ const Modals = (props) => {
                   >
                     <ModalHeader toggle={VaryingContenttwotoggle}>
                       New message
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={VaryingContenttwotoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>
                       <Form>
@@ -489,9 +465,6 @@ const Modals = (props) => {
                   >
                     <ModalHeader toggle={VaryingContentthreetoggle}>
                       New message
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={VaryingContentthreetoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>
                       <Form>
@@ -546,9 +519,6 @@ const Modals = (props) => {
                   <Modal isOpen={Large} toggle={LargeModaltoggle} size="lg">
                     <ModalHeader toggle={LargeModaltoggle}>
                       Large modal
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={LargeModaltoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>....</ModalBody>
                   </Modal>
@@ -558,9 +528,6 @@ const Modals = (props) => {
                   <Modal isOpen={Small} toggle={SmallModaltoggle} size="sm">
                     <ModalHeader toggle={SmallModaltoggle}>
                       Small modal
-                      <button className="btn-close invisible" type="button">
-                        <span aria-hidden="true" className="visible" onClick={SmallModaltoggle}>×</span>
-                      </button>
                     </ModalHeader>
                     <ModalBody>....</ModalBody>
                   </Modal>

@@ -9,7 +9,7 @@ const Ratings = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Rating" />
-      <Container fluid={true}>
+      <Container fluid={true} className="rating-page">
         <Row>
           <Col xl="6">
             <Card>
