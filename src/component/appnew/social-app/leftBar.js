@@ -75,7 +75,7 @@ const LeftBar = () => {
                 </Media>
               </Media>
               <div className="social-btngroup d-flex">
-                <Button color="primary text-center btn-pill" type="button">
+                <Button color="primary text-center btn-pill me-2" type="button">
                   Likes
                 </Button>
                 <Button color="light text-center btn-pill" type="button">

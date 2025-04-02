@@ -14,7 +14,7 @@ const BasicCards = () => {
   return (
     <Fragment>
       <Breadcrumb parent="Cards" title="Basic Card" />
-      <Container fluid={true}>
+      <Container fluid={true} className="basic-card-page">
         <Row>
           <Col sm="12" xl="6">
             <Card>

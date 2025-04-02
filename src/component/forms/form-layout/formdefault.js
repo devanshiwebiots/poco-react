@@ -11,7 +11,7 @@ const Formdefault = () => {
   return (
     <Fragment>
       <Breadcrumb parent='Forms / Form Layout' title='Default Forms' />
-      <Container fluid={true}>
+      <Container fluid={true} className="default-form">
         <Row>
           <Col sm='12' xl='6'>
             <Row>

@@ -11,7 +11,7 @@ const UserEdit = (props) => {
             <Col className="col-xxl-4" xl="12" md="12">
               <Card className="theme-form">
                 <CardHeader>
-                  <h4 className="card-title mb-0">My Profile</h4>
+                  <h5 className="card-title mb-0">My Profile</h5>
                   <div className="card-options">
                     <a className="card-options-collapse" href="#javascript">
                       <i className="fe fe-chevron-up"></i>
@@ -79,7 +79,7 @@ const UserEdit = (props) => {
             <Col className="col-xxl-8" xl="12" md="12">
               <Form className="card theme-form">
                 <CardHeader>
-                  <h4 className="card-title mb-0">Edit Profile</h4>
+                  <h5 className="card-title mb-0">Edit Profile</h5>
                   <div className="card-options">
                     <a className="card-options-collapse" href="#javascript">
                       <i className="fe fe-chevron-up"></i>

@@ -5,7 +5,7 @@ const CreativeCards = () => {
   return (
     <Fragment>
       <Breadcrumb parent="Cards" title="Theme Card" />
-      <Container fluid={true}>
+      <Container fluid={true} className="theme-card-page">
         <Row>
           <Col sm="12" xl="6">
             <Card>

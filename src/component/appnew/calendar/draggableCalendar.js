@@ -5,6 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import Swal from "sweetalert2/dist/sweetalert2.js";
+import Breadcrumb from "../../common/breadcrumb/breadcrumb";
 
 class DragCalendar extends Component {
   state = {
@@ -91,11 +92,12 @@ class DragCalendar extends Component {
   render() {
     return (
       <Fragment>
+        <Breadcrumb parent="Calendar" title="Draggable Calender"/>
         <div className="container-fluid">
           <div className="row">
             <div className="col-sm-12">
               <div className="card">
-                <div className="card-header">Draggable Calender</div>
+                <h5 className="card-header">Draggable Calender</h5>
                 <div className="card-body">
                   <div className="animated fadeIn demo-app">
                     <Row>
