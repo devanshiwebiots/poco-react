@@ -102,6 +102,49 @@ body {
     h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,p,span,label,li,.col-form-label,.rbc-button-link,small{
       color: $dark-all-font-color;
     }
+    .typography-page{
+      ul{
+        dd,dt{
+          color: $dark-all-font-color;
+        }
+      }
+    }
+    .tag-pills-page{
+      .badge{
+        &.rounded-pill{
+          &.bg-light{
+            color: $dark-color !important;
+          }
+        }
+      }
+    }
+    .alert-page{
+      .alert-light{
+        p{
+          color: $dark-color;
+        }
+        &.outline,&.inverse,&.outline-2x{
+          p{
+            color: $dark-all-font-color;
+          }
+        }
+        .alert-heading{
+          color: $dark-color;
+        }
+      }
+    }
+    .list-page{
+      .tab-content{
+        .tab-pane{
+          color: $dark-all-font-color;
+        }
+      }
+    }
+    .carousel-caption{
+      h5,p{
+        color: $dark-color;
+      }
+    }
     .text-dark{
       color: $dark-all-font-color !important;
     }
@@ -2066,6 +2109,7 @@ body {
             }
             .alert-dark {
               color: $dark-small-font-color;
+              border-color: $dark-border-color !important;
               a {
                 color: $dark-small-font-color;
               }
@@ -4188,6 +4232,9 @@ body {
           }
           .icon-wrapper {
             background-color: $dark-card-background;
+            i{
+              color: $dark-all-font-color;
+            }
           }
         }
         .tabs-scoial {

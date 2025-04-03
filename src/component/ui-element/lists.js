@@ -18,7 +18,7 @@ const Lists = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Ui Elements" title="Lists" />
-      <Container fluid={true}>
+      <Container fluid={true} className="list-page">
         <Row>
           <Col sm="12" xl="12">
             <Card>
