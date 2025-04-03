@@ -3765,7 +3765,6 @@
 }
 @media only screen and (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
     margin: 1.75rem auto;
   }
   .form-inline {
@@ -3781,6 +3780,17 @@
 }
 /* ========= responsive scss for 575 screen ========= */
 @media only screen and (max-width: 575px) {
+  .vertical-timeline-container{
+    padding-left: 0px;
+  }
+  .vertical-line{
+    left: 38px;
+  }
+  .timeline-card{
+    audio{
+      width: 100%;
+    }
+  }
   .customizer-links {
     display: none;
   }
@@ -5259,6 +5269,13 @@
 }
 /* ========= responsive scss for 480 screen ========= */
 @media only screen and (max-width: 480px) {
+  .timeline-icon{
+    height: 40px;
+    width: 40px;
+    i{
+      font-size: 14px;
+    }
+  }
   .checkout {
     .checkout-details {
       padding: 15px 12px;

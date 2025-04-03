@@ -506,7 +506,7 @@ $i: 1;
   box-shadow: none !important;
 }
 .map-block {
-  height: 350px;
+  height: 100%;
   width: 100%;
 }
 .map-js-height {
@@ -527,7 +527,10 @@ $i: 1;
 .digits {
   font-family: $font-work-sans, $font-serif;
 }
-.custom-scrollbar {
+.custom-scrollbar,
+.rbt-menu,
+.ace_scrollbar-v,
+.ace_scrollbar-h {
   &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px $light-gray;
   }

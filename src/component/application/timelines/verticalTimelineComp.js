@@ -17,7 +17,7 @@ const VerticalTimelineComp = () => {
               {item.description && <p>{item.description}</p>}
               {item.video && (
                 <div className='ratio ratio-21x9 mt-2'>
-                  <iframe src={item.video} title='video' allowFullScreen style={{ width: "100%", height: "280px", border: "none" }} />
+                  <iframe src={item.video} title='video' allowFullScreen style={{ width: "100%", height: "100%", border: "none" }} />
                 </div>
               )}
               {item.audio && (

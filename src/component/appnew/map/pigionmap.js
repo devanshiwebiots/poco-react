@@ -51,7 +51,7 @@ const MapJsContain = () => {
               </CardHeader>
               <CardBody>
                 <div className="map-js-height">
-                  <Map height={300} defaultCenter={[50.879, 4.6997]} defaultZoom={4} width={693.5}>
+                  <Map height={300} defaultCenter={[50.879, 4.6997]} defaultZoom={4}>
                     <GeoJson
                       svgAttributes={{
                         fill: "#d4e6ec99",

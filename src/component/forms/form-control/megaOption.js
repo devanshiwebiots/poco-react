@@ -18,7 +18,7 @@ const MegaOption = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Forms / Form Controls" title="Mega options" />
-      <Container fluid={true}>
+      <Container fluid={true} className="mega-options-page">
         <Row>
           <Col sm="12" xl="6 xl-100 box-col-12">
             <Card>

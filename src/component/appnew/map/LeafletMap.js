@@ -43,7 +43,7 @@ const LeafletMap = (props) => {
                     <MapContainer
                       className="jvector-map-height"
                       style={{
-                        height: 350,
+                        height: "100%",
                         width: "100%",
                       }}
                       center={[50, 10]}
@@ -76,7 +76,7 @@ const LeafletMap = (props) => {
                  
                   <MapContainer
                             className="jvector-map-height"
-                            style={{ height: 350, width: "100%" }}
+                            style={{ height: "100%", width: "100%" }}
                             zoom={13}
                             center={positionUSA}
                             attributionControl={true}
@@ -109,7 +109,7 @@ const LeafletMap = (props) => {
                   <div id="gmap-simple" className="map-block border">
                     <MapContainer
                       className="jvector-map-height"
-                      style={{ height: 350, width: "100%" }}
+                      style={{ height: "100%", width: "100%" }}
                       zoom={5}
                       center={positionIndia}
                       zoomControl={true}
@@ -154,7 +154,7 @@ const LeafletMap = (props) => {
                   <div id="gmap-simple" className="map-block border">
                     <MapContainer
                       className="jvector-map-height"
-                      style={{ height: 350, width: "100%" }}
+                      style={{ height: "100%", width: "100%" }}
                       zoom={4}
                       center={centerAustralia}
                       zoomControl={true}

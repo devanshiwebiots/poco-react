@@ -25,7 +25,7 @@ const TabCard = () => {
   return (
     <Fragment>
       <Breadcrumb parent="Cards" title="Tabbed Card" />
-      <Container fluid={true}>
+      <Container fluid={true} className="tab-card-page">
         <Row>
           <Col lg="12 box-col-12" xl="6 xl-100">
             <Card>

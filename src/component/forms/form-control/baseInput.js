@@ -81,7 +81,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control digits" />
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control digits custom-scrollbar" />
                   </Row>
                   <Row>
                     <Col>
@@ -286,7 +286,7 @@ const BaseInput = () => {
                   </Row>
                 </CardBody>
                 <CardFooter>
-                  <Col sm="9 offset-sm-3">
+                  <Col sm="9">
                     <Button color="primary" className="me-3">
                       Submit
                     </Button>
@@ -349,7 +349,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control btn-pill digits" />
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control btn-pill digits custom-scrollbar" />
                   </Row>
                   <Row>
                     <Col>
@@ -425,7 +425,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control rounded-0 digits" />
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control rounded-0 digits custom-scrollbar" />
                   </Row>
                   <Row>
                     <Col>
@@ -499,7 +499,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control input-air-primary digits" />
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control input-air-primary digits custom-scrollbar" />
                   </Row>
                   <Row>
                     <Col>
@@ -586,7 +586,7 @@ const BaseInput = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control digits" />
+                    <CommonSelectDropdown title={"Example Multiple Select"} options={Options} multiple={true} inputClass="form-control digits custom-scrollbar" />
                   </Row>
                   <Row>
                     <Col>

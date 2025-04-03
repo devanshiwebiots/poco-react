@@ -21,7 +21,7 @@ const Formvalidation = () => {
   return (
     <Fragment>
       <Breadcrumb parent='Forms / Form Controls' title='Validation Forms' />
-      <Container fluid={true}>
+      <Container fluid={true} className="forms-validation">
         <Row>
           <Col sm='12'>
             <Card>

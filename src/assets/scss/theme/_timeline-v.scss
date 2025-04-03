@@ -237,6 +237,9 @@ header {
     &:nth-child(even) {
       .cd-timeline-content {
         float: right;
+        [dir = rtl] & {
+          float: left;
+        }
         .cd-date {
           left: auto;
           right: 122%;
@@ -358,14 +361,21 @@ header {
     margin-top: -12px;
     font-size: 27px;
     color: $white;
+    [dir = rtl] & {
+      left: unset;
+      right: 15%;
+    }
   }
 }
 
 .vertical-timeline-container {
-	width: 1300px;
 	position: relative;
 	padding-left: 70px;
 	margin: 2rem 0;
+  [dir = rtl] & {
+    padding-left: 0;
+    padding-right: 70px;
+  }
   }
   
   .vertical-line {
@@ -375,6 +385,10 @@ header {
 	width: 4px;
 	height: 100%;
 	background-color: #f6f7fb;
+  [dir = rtl] & {
+    left: unset;
+    right: 110px;
+  }
   }  
   
   .timeline-item {
@@ -400,6 +414,10 @@ header {
 	align-items: center;
 	justify-content: center;
 	z-index: 2;
+  [dir = rtl] & {
+    left: unset;
+    right: -10px;
+  }
   }
   
   .timeline-card {
@@ -409,6 +427,10 @@ header {
     box-shadow: 0 0 10px rgba(185, 182, 182, 0.5) !important;
     width: 100%;
     border-radius: 0 !important;
+    [dir = rtl] & {
+      margin-left: unset;
+      margin-right: 80px;
+    }
     
     .card {
       border-radius: 0 !important;
@@ -622,8 +644,8 @@ header {
   .cd-timeline-block {
     .cd-timeline-img {
       left: -2px;
-      height: 30px;
-      width: 30px;
+      height: 40px;
+      width: 40px;
       margin-left: -30px;
       top: 14px;
       z-index: 8;

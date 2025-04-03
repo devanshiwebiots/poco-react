@@ -14,7 +14,7 @@ const Checkboxandradio = (props) => {
   return (
     <Fragment>
       <Breadcrumb parent="Forms / Form Controls" title="Checkbox & Radio" />
-      <Container fluid={true}>
+      <Container fluid={true} className="checkbox-radio-page">
         <Row>
           <Col xl="6" lg="12" md="6">
             <Card>
