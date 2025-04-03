@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { XCircle } from "react-feather";
 import { ADD_COLOR, ADD_COSTOMIZER, ADD_LAYOUT, ADD_MIXlAYOUT, ADD_SIDEBAR_TYPES, ROUTER_ANIMATION } from "../../../redux/customizer/CustomizerSlice";
 const ThemeCustomize = () => {
-  const configDB = useSelector((state) => state.customizerReducer.customizer);
+  const configDB = useSelector((state) => state.customizerSlice.customizer);
   const [showHorizontal, setShowHorizontal] = useState(true);
   const [boxLayout, setBoxLayout] = useState(true);
   const [modal, setModal] = useState();

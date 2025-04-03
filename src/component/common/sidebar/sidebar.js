@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const [margin, setMargin] = useState(0);
   const [mainmenu, setMainMenu] = useState(MENUITEMS);
-  const configDB = useSelector((state) => state.customizerReducer.customizer);
+  const configDB = useSelector((state) => state.customizerSlice.customizer);
   const sidebar_type = configDB.settings.sidebar.wrapper;
   const layout_type = useState(configDB.settings.layout_type);
   const [hideRightArrow, setHideRightArrow] = useState(true);

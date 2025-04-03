@@ -11,7 +11,7 @@ import chatSliceReducer from "./chat-app/ChatSlice";
 export const store = configureStore({
   reducer: {
     wishlistSlice: wishlistReducer,
-    customizerReducer: customizerReducer,
+    customizerSlice: customizerReducer,
     todoSlice: todoSliceReducer,
     productSlice: productSliceReducer,
     filterSlice: filterSliceReducer,
