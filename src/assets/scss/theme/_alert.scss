@@ -194,7 +194,7 @@ $alert-color: $primary-color, $secondary-color, $success-color, $danger-color,
       display: inline-block;
       background-color: nth($alert-color, $i) !important;
       color: $white;
-      border-radius: 15px 0 0 15px;
+      border-radius: 20px 0 0 20px;
       position: absolute;
       left: 0;
       top: 0;
