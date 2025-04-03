@@ -6,6 +6,10 @@ import { AlignCenter, FileText, Activity, User, Clipboard, Anchor, Settings, Log
 import { Row, Col, Form, FormGroup, Button } from "reactstrap";
 import { MENUITEMS } from "../sidebar/menu";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import logoDark from "../../../assets/images/logo/logo.png";
+import logoLight from "../../../assets/images/logo/light-logo.png";
+
 const Header = (props) => {
   const history = useNavigate();
   const [profile, setProfile] = useState("");
@@ -20,6 +24,10 @@ const Header = (props) => {
   const [sidebar, setSidebar] = useState("iconsidebar-menu");
   const [rightSidebar, setRightSidebar] = useState(true);
   const width = useWindowSize();
+  const layoutVersion = useSelector((state) => state.customizerSlice.color.layout_version);
+  const mixLayout = useSelector((state) => state.customizerSlice.mix_layout)
+  const isDarkMode = layoutVersion === "dark-only" || mixLayout === "dark-only";
+  const logo = isDarkMode ? logoLight : logoDark;
 
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
@@ -207,7 +215,7 @@ const Header = (props) => {
         <div className='main-header-left text-center'>
           <div className='logo-wrapper'>
             <Link to={`${process.env.PUBLIC_URL}/dashboard/default`}>
-              <img src={require("../../../assets/images/logo/logo.png")} alt='' />
+              <img src={logo} alt='Logo' />
             </Link>
           </div>
         </div>
