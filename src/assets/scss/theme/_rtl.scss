@@ -162,11 +162,31 @@
       }
     }
   }
+  .Typeahead-spinner{
+     right: unset;
+     left: 18px;
+  }
   .page-wrapper{
     .page-main-header{
       .main-header-left{
         padding-left: unset;
         padding-right: 30px;
+      }
+    }
+    &.horizontal_sidebar {
+      .page-body-wrapper {
+        .iconsidebar-menu {
+          .iconMenu-bar{
+            direction: rtl;
+            text-align: right;
+            .bar-icons {
+              i{
+                margin-right: unset;
+                margin-left: 10px;
+              }
+            }
+          }
+        }
       }
     }
   }

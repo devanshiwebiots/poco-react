@@ -106,7 +106,7 @@
         .bar-icons {
           display: block;
           text-align: center;
-          padding: 17px 30px;
+          padding: $sidebar-bar-icon-padding;
           transition: all 0.3s ease;
           border: 1px solid $light-background;
           border-top: none;
@@ -275,6 +275,7 @@
           box-shadow: 2.5px 4.33px 30px 0px rgba($primary-color, 0.035);
           .bar-icons {
             border: none;
+            padding: 17px 30px;
             i {
               font-size: 18px;
               margin-right: 10px;
