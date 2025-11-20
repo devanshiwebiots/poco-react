@@ -2,7 +2,7 @@ const data = [
    
     {
         Id: 1,
-        img: require('../../../../assets/images/faq/3.jpg'),
+        img: ('/assets/imagess/faq/3.jpg'),
         date: '15 April 2022',
         writer: 'Admin',
         hits: '0',
@@ -12,7 +12,7 @@ const data = [
     },
     {
         Id: 2,
-        img: require('../../../../assets/images/faq/2.jpg'),
+        img: ('/assets/imagess/faq/2.jpg'),
         date: '15 April 2022',
         writer: 'Admin',
         hits: '0',
@@ -22,7 +22,7 @@ const data = [
     },
     {
         Id: 3,
-        img: require('../../../../assets/images/faq/2.jpg'),
+        img: ('/assets/imagess/faq/2.jpg'),
         date: '15 April 2022',
         writer: 'Admin',
         hits: '0',
@@ -32,7 +32,7 @@ const data = [
     },
     {
         Id: 4,
-        img: require('../../../../assets/images/faq/1.jpg'),
+        img: ('/assets/imagess/faq/1.jpg'),
         date: '15 April 2022',
         writer: 'Admin',
         hits: '0',
@@ -42,7 +42,7 @@ const data = [
     },
     {
         Id: 5,
-        img: require('../../../../assets/images/faq/3.jpg'),
+        img: ('/assets/imagess/faq/3.jpg'),
         date: '15 April 2022',
         writer: 'Admin',
         hits: '0',
@@ -52,7 +52,7 @@ const data = [
     },
     {
         Id: 6,
-        img: require('../../../../assets/images/faq/2.jpg'),
+        img: ('/assets/imagess/faq/2.jpg'),
         date: '15 April 2022',
         writer: 'Admin',
         hits: '0',

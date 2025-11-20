@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { Carousel, CarouselItem, CarouselIndicators, CarouselCaption, CarouselControl, UncontrolledCarousel, Media } from "reactstrap";
 const items1 = [
   {
-    src: require("../../assets/images/slider/1.jpg"),
+    src: ("/assets/images/slider/1.jpg"),
     altText: "Slide 1",
     caption: "Slide 1",
   },
   {
-    src: require("../../assets/images/slider/2.jpg"),
+    src: ("/assets/images/slider/2.jpg"),
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src: require("../../assets/images/slider/3.jpg"),
+    src: ("/assets/images/slider/3.jpg"),
     altText: "Slide 3",
     caption: "Slide 3",
   },
@@ -20,17 +20,17 @@ const items1 = [
 
 const items2 = [
   {
-    src: require("../../assets/images/slider/1.jpg"),
+    src: ("/assets/images/slider/1.jpg"),
     altText: "Slide 1",
     caption: "Slide 1",
   },
   {
-    src: require("../../assets/images/slider/2.jpg"),
+    src: ("/assets/images/slider/2.jpg"),
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
-    src: require("../../assets/images/slider/3.jpg"),
+    src: ("/assets/images/slider/3.jpg"),
     altText: "Slide 3",
     caption: "Slide 3",
   },
@@ -39,19 +39,19 @@ const items2 = [
 const items3 = [
   {
     id: 1,
-    src: require("../../assets/images/slider/1.jpg"),
+    src: ("/assets/images/slider/1.jpg"),
     altText: "Slide 1",
     caption: "Slide 1",
   },
   {
     id: 2,
-    src: require("../../assets/images/slider/2.jpg"),
+    src: ("/assets/images/slider/2.jpg"),
     altText: "Slide 2",
     caption: "Slide 2",
   },
   {
     id: 3,
-    src: require("../../assets/images/slider/3.jpg"),
+    src: ("/assets/images/slider/3.jpg"),
     altText: "Slide 3",
     caption: "Slide 3",
   },

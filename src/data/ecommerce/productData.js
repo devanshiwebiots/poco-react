@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    img: require("../../assets/images/ecommerce/01.jpg"),
+    img: ("/assets/images/ecommerce/01.jpg"),
     name: "Men's Shirt",
     note: "Denim Regular Men's Shirt",
     discription:
@@ -18,25 +18,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 2,
-    img: require("../../assets/images/ecommerce/02.jpg"),
+    img: ("/assets/images/ecommerce/02.jpg"),
     name: "Men's Jacket",  
     note: "Denim Regular Men's Jacket",
     discription:
@@ -53,25 +53,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 3,
-    img: require("../../assets/images/ecommerce/03.jpg"),
+    img: ("/assets/images/ecommerce/03.jpg"),
     name: "Women's T-Shirt",
     note: "Solid Women's T-shirt",
     discription:
@@ -88,25 +88,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 4,
-    img: require("../../assets/images/ecommerce/04.jpg"),
+    img: ("/assets/images/ecommerce/04.jpg"),
     name: "Flower Top",
     note: "Solid Women's Top",
     discription:
@@ -123,25 +123,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 5,
-    img: require("../../assets/images/ecommerce/05.jpg"),
+    img: ("/assets/images/ecommerce/05.jpg"),
     name: "Woman's Long Top",
     note: "Solid Women's Long Top",
     discription:
@@ -158,25 +158,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 6,
-    img: require("../../assets/images/ecommerce/06.jpg"),
+    img: ("/assets/images/ecommerce/06.jpg"),
     name: "Cotton Kurti",
     note: "Women's Cotton Kurti",
     discription:
@@ -193,25 +193,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 7,
-    img: require("../../assets/images/ecommerce/07.jpg"),
+    img: ("/assets/images/ecommerce/07.jpg"),
     name: "Men's T-Shirt",
     note: "Solid Men's T-shirt",
     discription:
@@ -228,25 +228,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 8,
-    img: require("../../assets/images/ecommerce/08.jpg"),
+    img: ("/assets/images/ecommerce/08.jpg"),
     name: "Men's T-Shirt",
     note: "Solid Men's T-shirt",
     discription:
@@ -263,25 +263,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 9,
-    img: require("../../assets/images/ecommerce/09.jpg"),
+    img: ("/assets/images/ecommerce/09.jpg"),
     name: "Cotton Red Kurti",
     note: "Women's Cotton Red Kurti",
     discription:
@@ -298,25 +298,25 @@ const data = [
     variants: [
       {
         color: "purple",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "white",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 10,
-    img: require("../../assets/images/ecommerce/10.jpg"),
+    img: ("/assets/images/ecommerce/10.jpg"),
     name: "Cotton Red Kurti",
     note: "Women's Cotton Red Kurti",
     discription:
@@ -333,25 +333,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "red",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 11,
-    img: require("../../assets/images/ecommerce/11.jpg"),
+    img: ("/assets/images/ecommerce/11.jpg"),
     name: "Men's T-Shirt",
     note: "Solid Men's T-shirt",
     discription:
@@ -368,25 +368,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 12,
-    img: require("../../assets/images/ecommerce/12.jpg"),
+    img: ("/assets/images/ecommerce/12.jpg"),
     name: "Full Sleeve T-Shirt",
     note: "Solid Full Sleeve T-shirt",
     discription:
@@ -403,25 +403,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "purple",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 13,
-    img: require("../../assets/images/ecommerce/01.jpg"),
+    img: ("/assets/images/ecommerce/01.jpg"),
     name: "Men's Shirt",
     note: "Denim Regular Men's Shirt",
     discription:
@@ -438,25 +438,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 14,
-    img: require("../../assets/images/ecommerce/02.jpg"),
+    img: ("/assets/images/ecommerce/02.jpg"),
     name: "Men's Jacket",  
     note: "Denim Regular Men's Jacket",
     discription:
@@ -473,25 +473,25 @@ const data = [
     variants: [
       {
         color: "White",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 15,
-    img: require("../../assets/images/ecommerce/03.jpg"),
+    img: ("/assets/images/ecommerce/03.jpg"),
     name: "Woman",
     note: "Simply dummy text of the printing",
     discription:
@@ -508,25 +508,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 16,
-    img: require("../../assets/images/ecommerce/04.jpg"),
+    img: ("/assets/images/ecommerce/04.jpg"),
     name: "Flower Top",
     note: "Solid Women's Top",
     discription:
@@ -543,25 +543,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
     ],
   },
   {
     id: 17,
-    img: require("../../assets/images/ecommerce/05.jpg"),
+    img: ("/assets/images/ecommerce/05.jpg"),
     name: "Woman's Long Top",
     note: "Solid Women's Long Top",
     discription:
@@ -578,25 +578,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "red",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
     ],
   },
   {
     id: 18,
-    img: require("../../assets/images/ecommerce/06.jpg"),
+    img: ("/assets/images/ecommerce/06.jpg"),
     name: "Cotton Kurti",
     note: "Women's Cotton Kurti",
     discription:
@@ -613,25 +613,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "purple",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
     ],
   },
   {
     id: 19,
-    img: require("../../assets/images/ecommerce/07.jpg"),
+    img: ("/assets/images/ecommerce/07.jpg"),
     name: "Man",
     note: "Simply dummy text of the printing",
     discription:
@@ -648,25 +648,25 @@ const data = [
     variants: [
       {
         color: "red",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 20,
-    img: require("../../assets/images/ecommerce/08.jpg"),
+    img: ("/assets/images/ecommerce/08.jpg"),
     name: "Men's T-Shirt",
     note: "Solid Men's T-shirt",
     discription:
@@ -683,25 +683,25 @@ const data = [
     variants: [
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 21,
-    img: require("../../assets/images/ecommerce/09.jpg"),
+    img: ("/assets/images/ecommerce/09.jpg"),
     name: "Woman",
     note: "Simply dummy text of the printing",
     discription:
@@ -718,25 +718,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "blue",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 22,
-    img: require("../../assets/images/ecommerce/10.jpg"),
+    img: ("/assets/images/ecommerce/10.jpg"),
     name: "Woman",
     note: "Simply dummy text of the printing",
     discription:
@@ -753,25 +753,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "red",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 23,
-    img: require("../../assets/images/ecommerce/11.jpg"),
+    img: ("/assets/images/ecommerce/11.jpg"),
     name: "Men's T-Shirt",
     note: "Solid Men's T-shirt",
     discription:
@@ -788,25 +788,25 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "red",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "yellow",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },
   {
     id: 24,
-    img: require("../../assets/images/ecommerce/12.jpg"),
+    img: ("/assets/images/ecommerce/12.jpg"),
     name: "Full Sleeve T-Shirt",
     note: "Solid Full Sleeve T-shirt",
     discription:
@@ -823,19 +823,19 @@ const data = [
     variants: [
       {
         color: "black",
-        images: require("../../assets/images/ecommerce/01.jpg"),
+        images: ("/assets/images/ecommerce/01.jpg"),
       },
       {
         color: "pink",
-        images: require("../../assets/images/ecommerce/04.jpg"),
+        images: ("/assets/images/ecommerce/04.jpg"),
       },
       {
         color: "red",
-        images: require("../../assets/images/ecommerce/02.jpg"),
+        images: ("/assets/images/ecommerce/02.jpg"),
       },
       {
         color: "gray",
-        images: require("../../assets/images/ecommerce/03.jpg"),
+        images: ("/assets/images/ecommerce/03.jpg"),
       },
     ],
   },

@@ -1,7 +1,7 @@
 const jobDB = [
   {
     Id: 1,
-    logo: require("../assets/images/job-search/1.jpg"),
+    logo: ("/assets/images/job-search/1.jpg"),
     job_name: "UI/UX IT Frontend Developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -50,7 +50,7 @@ const jobDB = [
   },
   {
     Id: 2,
-    logo: require("../assets/images/job-search/2.jpg"),
+    logo: ("/assets/images/job-search/2.jpg"),
     job_name: "React/React Native Developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -99,7 +99,7 @@ const jobDB = [
   },
   {
     Id: 3,
-    logo: require("../assets/images/job-search/3.jpg"),
+    logo: ("/assets/images/job-search/3.jpg"),
     job_name: "Senior UX designer",
     job_area: "Minneapolis,",
     job_city: "MN",
@@ -146,7 +146,7 @@ const jobDB = [
   },
   {
     Id: 4,
-    logo: require("../assets/images/job-search/4.jpg"),
+    logo: ("/assets/images/job-search/4.jpg"),
     job_name: "Front end web developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -195,7 +195,7 @@ const jobDB = [
   },
   {
     Id: 5,
-    logo: require("../assets/images/job-search/5.jpg"),
+    logo: ("/assets/images/job-search/5.jpg"),
     job_name: "Graphic designer",
     badgeType: "primary",
     badgeValue: "New",
@@ -244,7 +244,7 @@ const jobDB = [
   },
   {
     Id: 6,
-    logo: require("../assets/images/job-search/6.jpg"),
+    logo: ("/assets/images/job-search/6.jpg"),
     job_name: "Designer, CRM",
     badgeType: "primary",
     badgeValue: "New",
@@ -293,7 +293,7 @@ const jobDB = [
   },
   {
     Id: 7,
-    logo: require("../assets/images/job-search/2.jpg"),
+    logo: ("/assets/images/job-search/2.jpg"),
     job_name: "UI designer E-commerce",
     job_area: "Ericsson",
     job_city: "Lelystad, Netherlands",
@@ -340,7 +340,7 @@ const jobDB = [
   },
   {
     Id: 8,
-    logo: require("../assets/images/job-search/3.jpg"),
+    logo: ("/assets/images/job-search/3.jpg"),
     job_name: "Senior UX designer",
     badgeType: "primary",
     badgeValue: "New",
@@ -389,7 +389,7 @@ const jobDB = [
   },
   {
     Id: 9,
-    logo: require("../assets/images/job-search/1.jpg"),
+    logo: ("/assets/images/job-search/1.jpg"),
     job_name: "UI/UX IT Frontend Developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -438,7 +438,7 @@ const jobDB = [
   },
   {
     Id: 10,
-    logo: require("../assets/images/job-search/2.jpg"),
+    logo: ("/assets/images/job-search/2.jpg"),
     job_name: "Graphic designer",
     badgeType: "primary",
     badgeValue: "New",
@@ -487,7 +487,7 @@ const jobDB = [
   },
   {
     Id: 11,
-    logo: require("../assets/images/job-search/3.jpg"),
+    logo: ("/assets/images/job-search/3.jpg"),
     job_name: "Business Developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -536,7 +536,7 @@ const jobDB = [
   },
   {
     Id: 12,
-    logo: require("../assets/images/job-search/6.jpg"),
+    logo: ("/assets/images/job-search/6.jpg"),
     job_name: "UI/UX IT Frontend Developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -585,7 +585,7 @@ const jobDB = [
   },
   {
     Id: 13,
-    logo: require("../assets/images/job-search/2.jpg"),
+    logo: ("/assets/images/job-search/2.jpg"),
     job_name: "JAVA Developer",
     badgeType: "primary",
     badgeValue: "New",
@@ -634,7 +634,7 @@ const jobDB = [
   },
   {
     Id: 14,
-    logo: require("../assets/images/job-search/4.jpg"),
+    logo: ("/assets/images/job-search/4.jpg"),
     job_name: "Angular Developer",
     job_area: "(L6) Salt Lake City,",
     job_city: "UT",
