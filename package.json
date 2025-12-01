@@ -6,6 +6,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^43.3.1",
     "@ckeditor/ckeditor5-react": "^9.5.0",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@fullcalendar/daygrid": "^6.1.15",
     "@fullcalendar/interaction": "^6.1.15",
     "@fullcalendar/react": "^6.1.15",
@@ -32,6 +33,7 @@
     "feather-icons": "^4.29.2",
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
+    "pe7-icon": "^1.0.4",
     "pigeon-maps": "^0.22.1",
     "react-ace": "^14.0.1",
     "react-animations": "^1.0.0",

@@ -1,6 +1,6 @@
 // Screen Readers
 // -------------------------
-
+@use "../font-awesome/mixins" as*;
 .sr-only {
   @include sr-only();
 }

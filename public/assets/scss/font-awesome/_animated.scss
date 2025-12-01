@@ -1,5 +1,7 @@
 // Spinning Icons
 // --------------------------
+@use "../font-awesome/variables" as*;
+
 
 .#{$fa-css-prefix}-spin {
   -webkit-animation: fa-spin 2s infinite linear;

@@ -1,6 +1,6 @@
 /* FONT PATH
  * -------------------------- */
-
+@use "../font-awesome/variables" as*;
 @font-face {
   font-family: "FontAwesome";
   src: url("#{$fa-font-path}/font-awesome/fontawesome-webfont.eot?v=#{$fa-version}");

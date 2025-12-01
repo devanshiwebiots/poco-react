@@ -1,6 +1,7 @@
 // Rotated & Flipped Icons
 // -------------------------
-
+@use "../font-awesome/variables" as*;
+@use "../font-awesome/mixins" as*;
 .#{$fa-css-prefix}-rotate-90 {
   @include fa-icon-rotate(90deg, 1);
 }
